@@ -80,8 +80,8 @@ $res = mysqli_query($con, $sql);
                             data-start="<?= $row['start_datetime']; ?>" data-end="<?= $row['end_datetime']; ?>"
                             data-desc="<?= htmlspecialchars($row['description']); ?>"
                             data-first="<?= $row['first_prize']; ?>" data-second="<?= $row['second_prize']; ?>"
-                            data-third="<?= $row['third_prize']; ?>" data-toggle="modal"
-                            data-target="#editCompetitionModal">
+                            data-third="<?= $row['third_prize']; ?>" data-bs-toggle="modal"
+                            data-bs-target="#editCompetitionModal">
                             ✏️ Edit
                         </a>
 
@@ -178,7 +178,7 @@ $res = mysqli_query($con, $sql);
             <form action="update_competition.php" method="POST">
                 <div class="modal-header bg-warning">
                     <h5 class="modal-title" id="editCompetitionModalLabel">Edit Competition</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                         <span>&times;</span>
                     </button>
                 </div>
@@ -235,7 +235,7 @@ $res = mysqli_query($con, $sql);
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                     <button type="submit" class="btn btn-warning">Update Competition</button>
                 </div>
             </form>

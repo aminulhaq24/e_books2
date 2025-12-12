@@ -647,7 +647,7 @@ ORDER BY book_id DESC");
                     <button type="button" class="btn btn-light" data-bs-dismiss="modal">
                         <i class="fas fa-times"></i> Cancel
                     </button>
-                    <button type="submit" class="btn btn-gradient-update">
+                    <button type="submit"  class="btn btn-gradient-update">
                         <i class="fas fa-save"></i> Update Book
                     </button>
                 </div>
@@ -689,7 +689,7 @@ ORDER BY book_id DESC");
     <script>
     
         // Edit Book Button Click
-        $(document).on("click", ".editBookForm", function() {
+        $(document).on("click", ".editBookBtn", function() {
             // Get data from button
             let bookData = {
                 id: $(this).data("id"),
@@ -757,54 +757,54 @@ ORDER BY book_id DESC");
         // }
     
         // Category change event
-        $("#edit_category").change(function() {
-            loadSubcategories($(this).val());
-        });
+        // $("#edit_category").change(function() {
+        //     loadSubcategories($(this).val());
+        // });
     
         // File input label update
-        $('.custom-file-input').change(function() {
-            var fileName = $(this).val().split('\\').pop();
-            $(this).next('.custom-file-label').addClass("selected").html(fileName);
-        });
+        // $('.custom-file-input').change(function() {
+        //     var fileName = $(this).val().split('\\').pop();
+        //     $(this).next('.custom-file-label').addClass("selected").html(fileName);
+        // });
     
         // Form submission with AJAX
-        $("#editBookForm").submit(function(e) {
-            e.preventDefault();
+        // $("#editBookForm").submit(function(e) {
+        //     e.preventDefault();
             
-            var formData = new FormData(this);
+        //     var formData = new FormData(this);
             
-            $.ajax({
-                url: 'update_book.php',
-                type: 'POST',
-                data: formData,
-                contentType: false,
-                processData: false,
-                beforeSend: function() {
-                    $(".btn-gradient-update").html('<i class="fas fa-spinner fa-spin"></i> Updating...').prop('disabled', true);
-                },
-                success: function(response) {
-                    if (response.success) {
-                        // Show success message
-                        $("#editMessage").removeClass("alert-danger").addClass("alert-success")
-                            .html('<i class="fas fa-check-circle"></i> ' + response.message).show();
+        //     $.ajax({
+        //         url: 'update_book.php',
+        //         type: 'POST',
+        //         data: formData,
+        //         contentType: false,
+        //         processData: false,
+        //         beforeSend: function() {
+        //             $(".btn-gradient-update").html('<i class="fas fa-spinner fa-spin"></i> Updating...').prop('disabled', true);
+        //         },
+        //         success: function(response) {
+        //             if (response.success) {
+        //                 // Show success message
+        //                 $("#editMessage").removeClass("alert-danger").addClass("alert-success")
+        //                     .html('<i class="fas fa-check-circle"></i> ' + response.message).show();
                         
-                        // Close modal after 2 seconds and reload page
-                        setTimeout(function() {
-                            $('#editBookModal').modal('hide');
-                            location.reload();
-                        }, 2000);
-                    } else {
-                        $("#editMessage").removeClass("alert-success").addClass("alert-danger")
-                            .html('<i class="fas fa-exclamation-circle"></i> ' + response.message).show();
-                        $(".btn-gradient-update").html('<i class="fas fa-save"></i> Update Book').prop('disabled', false);
-                    }
-                },
-                error: function() {
-                    $("#editMessage").removeClass("alert-success").addClass("alert-danger")
-                        .html('<i class="fas fa-exclamation-circle"></i> Network error! Please try again.').show();
-                    $(".btn-gradient-update").html('<i class="fas fa-save"></i> Update Book').prop('disabled', false);
-                }
-            });
-        });
+        //                 // Close modal after 2 seconds and reload page
+        //                 setTimeout(function() {
+        //                     $('#editBookModal').modal('hide');
+        //                     location.reload();
+        //                 }, 2000);
+        //             } else {
+        //                 $("#editMessage").removeClass("alert-success").addClass("alert-danger")
+        //                     .html('<i class="fas fa-exclamation-circle"></i> ' + response.message).show();
+        //                 $(".btn-gradient-update").html('<i class="fas fa-save"></i> Update Book').prop('disabled', false);
+        //             }
+        //         },
+        //         error: function() {
+        //             $("#editMessage").removeClass("alert-success").addClass("alert-danger")
+        //                 .html('<i class="fas fa-exclamation-circle"></i> Network error! Please try again.').show();
+        //             $(".btn-gradient-update").html('<i class="fas fa-save"></i> Update Book').prop('disabled', false);
+        //         }
+        //     });
+        // });
     
     </script>

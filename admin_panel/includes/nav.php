@@ -18,6 +18,10 @@ if(!isset($_SESSION['admin_logged_in'])){
 
     <title>E-Book System - Admin Dashboard</title>
 
+    <!-- for tables -->
+
+     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
+
     <!-- Bootstrap 5 CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome for icons -->

@@ -51,3 +51,5 @@ if($result) {
     // Check redirect destination
    header(Location: 'index.php');
 }
+
+?>

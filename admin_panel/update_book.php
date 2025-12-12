@@ -1,14 +1,14 @@
 <?php
 include("includes/connection.php");
-session_start();
+
 
 // Check admin authentication
-if(!isset($_SESSION['admin_id'])) {
-    echo json_encode(['success' => false, 'message' => 'Unauthorized access!']);
-    exit();
-}
+// if(!isset($_SESSION['admin_id'])) {
+//     echo json_encode(['success' => false, 'message' => 'Unauthorized access!']);
+//     exit();
+// }
 
-$response = ['success' => false, 'message' => ''];
+// $response = ['success' => false, 'message' => ''];
 
 if (isset($_POST['book_id'])) {
     $book_id = intval($_POST['book_id']);
@@ -108,21 +108,20 @@ if (isset($_POST['book_id'])) {
                 is_competition_winner = '$is_competition_winner',
                 cover_image = '$cover_image',
                 pdf_file = '$pdf_file',
-                soft_copy_file = '$soft_copy_file',
-                updated_at = NOW()
+                soft_copy_file = '$soft_copy_file'
+                
             WHERE book_id = $book_id";
 
-    if (mysqli_query($con, $sql)) {
-        $response['success'] = true;
-        $response['message'] = 'Book updated successfully!';
+     if (mysqli_query($con, $sql)) {
+        echo "<script>
+                alert('Book updated successfully!');
+                window.location.href='book_lists.php';
+              </script>";
     } else {
-        $response['message'] = 'Error: ' . mysqli_error($con);
+        echo "<script>
+                alert('Something went wrong!');
+                window.location.href='book_lists.php';
+              </script>";
     }
-} else {
-    $response['message'] = 'Book ID not provided!';
 }
-
-// Return JSON response
-header('Content-Type: application/json');
-echo json_encode($response);
 ?>
