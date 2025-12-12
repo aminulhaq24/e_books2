@@ -1,0 +1,17 @@
+e project submission dism
+
+project folder structure 
+
+create folder with name of e project (EBOOK)
+
+source code 
+  all code files
+
+documentation
+ user guide
+ developer guide
+ design guide
+ video recording
+ feedback form
+ status report
+  
