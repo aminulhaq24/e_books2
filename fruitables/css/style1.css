@@ -1,0 +1,243 @@
+   :root {
+        --primary-color: #2c3e50;
+        --secondary-color: #3498db;
+        --accent-color: #e74c3c;
+        --light-color: #f8f9fa;
+        --dark-color: #2c3e50;
+        --success-color: #27ae60;
+        --warning-color: #f39c12;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        color: #333;
+        background-color: #f8f9fa;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        font-family: 'Merriweather', serif;
+        font-weight: 700;
+    }
+
+    /* Navbar Customization */
+    .navbar-brand h1 {
+        color: var(--primary-color) !important;
+    }
+
+    .navbar-brand h1 i {
+        color: var(--secondary-color);
+    }
+
+    /* Hero Section */
+    .hero-header {
+        background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.8));
+        /* background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover; */
+        color: white;
+        margin-top: 152px !important;
+        height: 110vh;
+    }
+
+    @media (max-width: 992px) {
+        .hero-header {
+            margin-top: 97px !important;
+        }
+    }
+
+    /* Book Cards */
+    .fruite-item {
+        border: 1px solid #e0e0e0;
+        border-radius: 10px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        height: 100%;
+        background: white;
+        position: relative;
+    }
+
+    .fruite-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .fruite-img {
+        height: 250px;
+        overflow: hidden;
+    }
+
+    .fruite-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .fruite-item:hover .fruite-img img {
+        transform: scale(1.05);
+    }
+
+    .category-badge {
+        background: var(--secondary-color) !important;
+        color: white;
+        font-size: 0.8rem;
+        font-weight: 500;
+        border: none;
+    }
+
+    .price-tag {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: var(--accent-color);
+        margin: 0;
+    }
+
+    .free-badge {
+        background: var(--success-color);
+        color: white;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 500;
+    }
+
+    /* Features Section */
+
+    .featurs {
+        margin-top: 130px;
+    }
+
+    .featurs-item {
+        border: 1px solid #e0e0e0;
+        transition: all 0.3s ease;
+        height: 100%;
+    }
+
+    .featurs-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        border-color: var(--secondary-color);
+    }
+
+    .featurs-icon {
+        background: var(--secondary-color) !important;
+    }
+
+    .featurs-content h5 {
+        color: var(--primary-color);
+    }
+
+    /* Statistics Section */
+    .counter h1 {
+        color: var(--secondary-color);
+        font-weight: 700;
+    }
+
+    .counter i {
+        color: var(--secondary-color) !important;
+    }
+
+    /* Banner Section */
+    .banner {
+        background: linear-gradient(135deg, var(--primary-color) 0%, #4a6491 100%) !important;
+    }
+
+    .banner h1 {
+        color: white !important;
+    }
+
+    .banner-btn {
+        background: white;
+        color: var(--primary-color) !important;
+        border: 2px solid white !important;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+    .banner-btn:hover {
+        background: transparent;
+        color: white !important;
+    }
+
+    /* Testimonials */
+    .testimonial-item {
+        border: 1px solid #e0e0e0;
+        transition: all 0.3s ease;
+    }
+
+    .testimonial-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        border-color: var(--secondary-color);
+    }
+
+    /* Footer */
+    .footer {
+        background: var(--primary-color) !important;
+    }
+
+    /* Competition Cards */
+    .competition-card {
+        border-left: 5px solid var(--accent-color);
+        transition: all 0.3s ease;
+    }
+
+    .competition-card:hover {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Search Modal */
+    #searchModal .modal-content {
+        background: rgba(44, 62, 80, 0.95);
+    }
+
+    #searchModal .modal-header {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    #searchModal .modal-title {
+        color: white;
+    }
+
+    /* Custom Buttons */
+    .btn-primary {
+        background: var(--secondary-color);
+        border-color: var(--secondary-color);
+    }
+
+    .btn-primary:hover {
+        background: var(--primary-color);
+        border-color: var(--primary-color);
+    }
+
+    /* Tabs */
+    .nav-pills .nav-link.active {
+        background: var(--secondary-color) !important;
+    }
+
+    .tabs-slider .nav-link {
+        transition: all 0.3s ease;
+    }
+
+    .tabs-slider .nav-link:hover {
+        background: #f0f8ff !important;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .hero-header h1.display-3 {
+            font-size: 2.5rem;
+        }
+
+        .fruite-img {
+            height: 200px;
+        }
+
+        .featurs-item {
+            margin-bottom: 20px;
+        }
+    }

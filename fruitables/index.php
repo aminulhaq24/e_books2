@@ -4,21 +4,44 @@ include('includes/nav.php');
 
 
 <!-- Hero Start -->
-<div class="container-fluid py-5 mb-5 hero-header ">
-
+<div class="container-fluid py-4 mb-5 hero-header">
     <div class="container py-5">
-        <div class="row g-5 align-items-center">
+        <div class="row">
             <div class="col-md-12 col-lg-7">
-                <h4 class="mb-3" style="color: #eb6134;">100% Organic Foods</h4>
-                <h1 class="mb-5 display-3 text-primary">Organic Veggies & Fruits Foods</h1>
-                <div class="position-relative mx-auto">
-                    <input class="form-control border-2 border-secondary w-75 py-3 px-4 rounded-pill" type="number"
-                        placeholder="Search">
-                    <button type="submit"
-                        class="btn btn-primary border-2 border-secondary py-3 px-4 position-absolute rounded-pill text-white h-100"
-                        style="top: 0; right: 25%;">Submit Now</button>
+                <h4 class="mb-3" style="color: #ffd700;">
+                    <i class="fas fa-star me-2"></i>Welcome to Digital Library
+                </h4>
+                <h1 class="mb-5 display-4 mt-4 text-white">
+                    Discover & Read<br>Amazing Books Online
+                </h1>
+                <p class="lead text-light mt-5 me-4 mb-3">
+                    Access thousands of eBooks across all genres. Read anytime, anywhere on any device.
+                    Join our community of passionate readers and writers.
+                </p>
+
+                <div class="position-relative mx-auto" style="margin-top: 70px;">
+                    <form action="search.php" method="GET" class="d-flex">
+                        <input class="form-control border-2 border-light w-75 py-3 px-4 rounded-pill" type="text"
+                            name="q" placeholder="Search books, authors, categories...">
+                        <button type="submit"
+                            class="btn btn-warning border-2 border-light py-3 px-4 rounded-pill text-dark fw-bold ms-2">
+                            <i class="fas fa-search me-2"></i> Search
+                        </button>
+                    </form>
+                </div>
+
+                <div style="margin-top: 80px;">
+                    <a href="register.php" class="btn btn-primary btn-lg px-4 me-3">
+                        <i class="fas fa-user-plus me-2"></i>Join Free
+                    </a>
+                    <a href="books.php" class="btn btn-outline-light btn-lg px-4">
+                        <i class="fas fa-book-open me-2"></i>Browse All Books
+                    </a>
                 </div>
             </div>
+
+            <!-- carosel -->
+
             <div class="col-md-12 col-lg-5 rounded">
                 <div id="carouselId" class="carousel slide position-relative carosel rounded" data-bs-ride="carousel">
                     <div class="carousel-inner" role="listbox rounded">
@@ -52,80 +75,81 @@ include('includes/nav.php');
                             <a href="#" class="btn px-4 py-2 text-white rounded">Poetry</a>
                         </div>
                     </div>
-                   
                 </div>
             </div>
         </div>
+
     </div>
 </div>
 <!-- Hero End -->
 
-
-<!-- Featurs Section Start -->
+<!-- Features Section Start -->
 <div class="container-fluid featurs py-3">
     <div class="container py-5">
         <div class="row g-4">
             <div class="col-md-6 col-lg-3">
                 <div class="featurs-item text-center rounded bg-light p-4">
                     <div class="featurs-icon btn-square rounded-circle bg-secondary mb-5 mx-auto">
-                        <i class="fas fa-car-side fa-3x text-white"></i>
+                        <i class="fas fa-book-reader fa-3x text-white"></i>
                     </div>
                     <div class="featurs-content text-center">
-                        <h5>Free Shipping</h5>
-                        <p class="mb-0">Free on order over $300</p>
+                        <h5>Instant Access</h5>
+                        <p class="mb-0">Read immediately after purchase. No shipping delays.</p>
                     </div>
                 </div>
             </div>
+
             <div class="col-md-6 col-lg-3">
                 <div class="featurs-item text-center rounded bg-light p-4">
                     <div class="featurs-icon btn-square rounded-circle bg-secondary mb-5 mx-auto">
-                        <i class="fas fa-user-shield fa-3x text-white"></i>
+                        <i class="fas fa-mobile-alt fa-3x text-white"></i>
                     </div>
                     <div class="featurs-content text-center">
-                        <h5>Security Payment</h5>
-                        <p class="mb-0">100% security payment</p>
+                        <h5>Read Anywhere</h5>
+                        <p class="mb-0">Access on phone, tablet, or computer. Sync your progress.</p>
                     </div>
                 </div>
             </div>
+
             <div class="col-md-6 col-lg-3">
                 <div class="featurs-item text-center rounded bg-light p-4">
                     <div class="featurs-icon btn-square rounded-circle bg-secondary mb-5 mx-auto">
-                        <i class="fas fa-exchange-alt fa-3x text-white"></i>
+                        <i class="fas fa-gift fa-3x text-white"></i>
                     </div>
                     <div class="featurs-content text-center">
-                        <h5>30 Day Return</h5>
-                        <p class="mb-0">30 day money guarantee</p>
+                        <h5>Free Books</h5>
+                        <p class="mb-0">Exclusive free books for registered members.</p>
                     </div>
                 </div>
             </div>
+
             <div class="col-md-6 col-lg-3">
                 <div class="featurs-item text-center rounded bg-light p-4">
                     <div class="featurs-icon btn-square rounded-circle bg-secondary mb-5 mx-auto">
-                        <i class="fa fa-phone-alt fa-3x text-white"></i>
+                        <i class="fas fa-shield-alt fa-3x text-white"></i>
                     </div>
                     <div class="featurs-content text-center">
-                        <h5>24/7 Support</h5>
-                        <p class="mb-0">Support every time fast</p>
+                        <h5>Secure Payment</h5>
+                        <p class="mb-0">100% secure transactions with SSL encryption.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- Featurs Section End -->
+<!-- Features Section End -->
 
-
-<!-- Fruits Shop Start-->
+<!-- Books Collection Start -->
 <div class="container-fluid fruite py-3">
     <div class="container py-5">
         <div class="tab-class text-center">
             <div class="row g-5">
-                <div class="col-lg-4 text-start">
+                <div class="col-12 text-start">
                     <h1>Our Books Collection</h1>
+
                 </div>
 
-                <div class="tabs-wrapper position-relative">
-
+                <div class="tabs-wrapper position-relative col-lg-8">
                     <!-- Left Arrow -->
                     <button class="tab-arrow left-arrow">
                         <i class="fa fa-chevron-left"></i>
@@ -138,7 +162,6 @@ include('includes/nav.php');
 
                     <!-- Tabs Slider -->
                     <ul id="tabs-slider" class="nav nav-pills d-inline-flex text-center mb-5 tabs-slider">
-
                         <!-- All Books -->
                         <li class="nav-item">
                             <a class="d-flex m-1 py-2 px-3 bg-light rounded-pill active" data-bs-toggle="pill"
@@ -148,354 +171,470 @@ include('includes/nav.php');
                         </li>
 
                         <?php
-         // Multiple main categories support
-        //  $categories = [22]; // <-- Yahan jitni marzi main categories add kar do
-        //  $cat_ids = implode(",", $categories);
-
-        //  $subQuery = "SELECT * FROM subcategories WHERE category_id IN ($cat_ids)";
-        //  $subcats = mysqli_query($con, $subQuery);
-               
-        //  ---------------********---------
-            // second method 
-            
-         //  (2 Main Categories ke Subcategories Fetch karne ke liye)
-
-                        // $cat_ids = "22, 23";      // yahan jitni chahein categories add kar sakte hain
-
-                        //  $subQuery = "SELECT * FROM subcategories WHERE category_id IN ($cat_ids)";
-                        //  $subcats = mysqli_query($con, $subQuery);
-
-
-                             $cat_id = 22; // MAIN BOOK CATEGORY ID
-                             $subQuery = "SELECT * FROM subcategories WHERE category_id = $cat_id";
-                             $subcats = mysqli_query($con, $subQuery);
-                        
-                             while($sub = mysqli_fetch_assoc($subcats)) {
-                             ?>
+                            // Fetch subcategories for tabs
+                            $cat_id = 22; // MAIN BOOK CATEGORY ID
+                            $subQuery = "SELECT * FROM subcategories WHERE category_id = $cat_id ORDER BY subcategory_name";
+                            $subcats = mysqli_query($con, $subQuery);
+                            
+                            while($sub = mysqli_fetch_assoc($subcats)):
+                            ?>
                         <li class="nav-item">
                             <a class="d-flex m-1 py-2 px-3 bg-light rounded-pill" data-bs-toggle="pill"
-                                href="#tab-<?= $sub['id'] ?>">
-                                <span class="text-dark" style="width: 130px;"><?= $sub['subcategory_name'] ?></span>
+                                href="#tab-<?php echo $sub['id']; ?>">
+                                <span class="text-dark"
+                                    style="width: 130px;"><?php echo htmlspecialchars($sub['subcategory_name']); ?></span>
                             </a>
                         </li>
-                        <?php } ?>
-
+                        <?php endwhile; ?>
                     </ul>
-
-
-
                 </div>
-
-
-
-
             </div>
-            <div class="tab-content py-4">
 
+            <div class="tab-content py-4">
                 <!-- ALL BOOKS TAB -->
                 <div id="tab-all" class="tab-pane fade show active p-0">
                     <div class="row g-4">
-
                         <?php
-                    $allBooksQuery = "
-                    SELECT books.*, subcategories.subcategory_name
-                    FROM books
-                    JOIN subcategories ON books.subcategory_id = subcategories.id
-                    WHERE books.category_id = $cat_id
-                ";
-                $allBooks = mysqli_query($con, $allBooksQuery);
-
-                while($book = mysqli_fetch_assoc($allBooks)) {
-                  ?>
+                            // Get all books with limit
+                            $allBooksQuery = "SELECT books.*, subcategories.subcategory_name 
+                                            FROM books 
+                                            JOIN subcategories ON books.subcategory_id = subcategories.id 
+                                            WHERE books.category_id = $cat_id 
+                                            ORDER BY books.created_at DESC 
+                                            LIMIT 8";
+                            $allBooks = mysqli_query($con, $allBooksQuery);
+                            
+                            if(mysqli_num_rows($allBooks) > 0):
+                                while($book = mysqli_fetch_assoc($allBooks)):
+                            ?>
                         <div class="col-md-6 col-lg-4 col-xl-3">
                             <div class="rounded position-relative fruite-item">
                                 <div class="fruite-img">
-                                    <img src="../admin_panel/uploads/<?= $book['cover_image'] ?>"
-                                        class="img-fluid w-100 rounded-top">
+                                    <img src="../admin_panel/uploads/<?php echo $book['cover_image']; ?>"
+                                        class="img-fluid w-100 rounded-top"
+                                        alt="<?php echo htmlspecialchars($book['title']); ?>"
+                                        style="height: 250px; object-fit: cover;">
                                 </div>
-
-                                <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
+                                <div class="text-white bg-secondary px-3 py-1 rounded position-absolute category-badge"
                                     style="top: 10px; left: 10px;">
-                                    <?= $book['subcategory_name'] ?>
+                                    <?php echo htmlspecialchars($book['subcategory_name']); ?>
                                 </div>
-
                                 <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                    <h4><?= $book['title'] ?></h4>
-                                    <p><?= $book['description'] ?></p>
-                                    <div class="d-flex justify-content-between flex-lg-wrap">
-                                        <p class="text-dark fs-5 fw-bold mb-0">$<?= $book['price'] ?></p>
-                                        <a class="btn border border-secondary rounded-pill px-3 text-primary">
-                                            <i class="fa fa-shopping-bag me-2"></i> Add to cart
+                                    <h6 class="mb-2"><?php echo htmlspecialchars($book['title']); ?></h6>
+                                    <p class="small text-muted mb-2">by
+                                        <?php echo htmlspecialchars($book['author']); ?></p>
+                                    <p class="small text-muted mb-3">
+                                        <?php 
+                                            $description = strip_tags($book['description']);
+                                            echo strlen($description) > 80 ? substr($description, 0, 80) . '...' : $description;
+                                            ?>
+                                    </p>
+                                    <div class="d-flex justify-content-between flex-lg-wrap align-items-center">
+                                        <?php if($book['price'] == 0): ?>
+                                        <span class="free-badge">FREE</span>
+                                        <?php else: ?>
+                                        <p class="price-tag mb-0">$<?php echo $book['price']; ?></p>
+                                        <?php endif; ?>
+                                        <a href="book-detail.php?id=<?php echo $book['book_id']; ?>"
+                                            class="btn border border-secondary rounded-pill px-3 text-primary">
+                                            <i class="fa fa-eye me-2"></i> View
                                         </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <?php } ?>
+                        <?php 
+                                endwhile;
+                            else:
+                            ?>
+                        <div class="col-12">
+                            <div class="alert alert-info text-center">
+                                <i class="fas fa-info-circle me-2"></i>
+                                No books available at the moment. Please check back later.
+                            </div>
+                        </div>
+                        <?php endif; ?>
+                    </div>
 
+                    <div class="text-center" style="margin-top: 84px;">
+                        <a href="shop.php" class="btn btn-primary px-5 py-3 rounded-pill">
+                            <i class="fas fa-book me-2"></i> View All Books
+                        </a>
                     </div>
                 </div>
 
                 <!-- SUBCATEGORY TABS -->
                 <?php
-                  $subcats = mysqli_query($con, "SELECT * FROM subcategories WHERE category_id = $cat_id");
-
-                    while($sub = mysqli_fetch_assoc($subcats)) {
-                  $sub_id = $sub['id'];
-                   ?>
-
-                <div id="tab-<?= $sub_id ?>" class="tab-pane fade p-0">
+                    mysqli_data_seek($subcats, 0);
+                    while($sub = mysqli_fetch_assoc($subcats)):
+                        $sub_id = $sub['id'];
+                    ?>
+                <div id="tab-<?php echo $sub_id; ?>" class="tab-pane fade p-0">
                     <div class="row g-4">
-
                         <?php
-                $bq = "SELECT books.*, subcategories.subcategory_name
-                       FROM books
-                       JOIN subcategories ON books.subcategory_id = subcategories.id
-                       WHERE books.subcategory_id = $sub_id";
-                
-                $books = mysqli_query($con, $bq);
-
-                while($book = mysqli_fetch_assoc($books)) {
-                ?>
+                            $bq = "SELECT books.*, subcategories.subcategory_name 
+                                  FROM books 
+                                  JOIN subcategories ON books.subcategory_id = subcategories.id 
+                                  WHERE books.subcategory_id = $sub_id 
+                                  ORDER BY books.created_at DESC 
+                                  LIMIT 8";
+                            $books = mysqli_query($con, $bq);
+                            
+                            if(mysqli_num_rows($books) > 0):
+                                while($book = mysqli_fetch_assoc($books)):
+                            ?>
                         <div class="col-md-6 col-lg-4 col-xl-3">
                             <div class="rounded position-relative fruite-item">
                                 <div class="fruite-img">
-                                    <img src="../admin_panel/uploads/<?= $book['cover_image']; ?>"
-                                        class="img-fluid w-100 rounded-top">
+                                    <img src="../admin_panel/uploads/<?php echo $book['cover_image']; ?>"
+                                        class="img-fluid w-100 rounded-top"
+                                        alt="<?php echo htmlspecialchars($book['title']); ?>"
+                                        style="height: 250px; object-fit: cover;">
                                 </div>
-
-                                <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
+                                <div class="text-white bg-secondary px-3 py-1 rounded position-absolute category-badge"
                                     style="top: 10px; left: 10px;">
-                                    <?= $book['subcategory_name'] ?>
+                                    <?php echo htmlspecialchars($book['subcategory_name']); ?>
                                 </div>
-
                                 <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                    <h4><?= $book['title'] ?></h4>
-                                    <p><?= $book['description'] ?></p>
-                                    <div class="d-flex justify-content-between flex-lg-wrap">
-                                        <p class="text-dark fs-5 fw-bold mb-0">$<?= $book['price'] ?></p>
-                                        <a class="btn border border-secondary rounded-pill px-3 text-primary">
-                                            <i class="fa fa-shopping-bag me-2"></i> Add to cart
+                                    <h6 class="mb-2"><?php echo htmlspecialchars($book['title']); ?></h6>
+                                    <p class="small text-muted mb-2">by
+                                        <?php echo htmlspecialchars($book['author']); ?></p>
+                                    <p class="small text-muted mb-3">
+                                        <?php 
+                                            $description = strip_tags($book['description']);
+                                            echo strlen($description) > 80 ? substr($description, 0, 80) . '...' : $description;
+                                            ?>
+                                    </p>
+                                    <div class="d-flex justify-content-between flex-lg-wrap align-items-center">
+                                        <?php if($book['price'] == 0): ?>
+                                        <span class="free-badge">FREE</span>
+                                        <?php else: ?>
+                                        <p class="price-tag mb-0">$<?php echo $book['price']; ?></p>
+                                        <?php endif; ?>
+                                        <a href="book-detail.php?id=<?php echo $book['book_id']; ?>"
+                                            class="btn border border-secondary rounded-pill px-3 text-primary">
+                                            <i class="fa fa-eye me-2"></i> View
                                         </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <?php } ?>
-
+                        <?php 
+                                endwhile;
+                            else:
+                                ?>
+                                
+                        <div class="col-12">
+                            <div class="alert alert-info text-center">
+                                <i class="fas fa-info-circle me-2"></i>
+                                No books available in this category yet.
+                            </div>
+                        </div>
+                        <?php endif; ?>
                     </div>
+                    <div class="col-12 text-center mt-4">
+                       <a href="shop.php?subcat=<?= $sub_id ?>"
+                          class="btn btn-outline-primary rounded-pill px-5">
+                           View More
+                       </a>
+                   </div>
                 </div>
-
-                <?php } ?>
-
+                <?php endwhile; ?>
             </div>
-
-
-
-
         </div>
     </div>
-    <!-- Fruits Shop End-->
+</div>
+<!-- Books Collection End -->
 
-
-   
-   <!-- Books Banner Start -->
+<!-- Statistics Banner Start -->
 <div class="container-fluid banner bg-secondary my-4">
     <div class="container py-5">
         <div class="row g-4 align-items-center">
-
-            <!-- LEFT TEXT -->
             <div class="col-lg-6">
                 <div class="py-4">
-                    <h1 class="display-3 text-white">Discover Amazing Books</h1>
-                    <p class="fw-normal display-5 text-dark mb-4">Read • Learn • Grow</p>
-
+                    <h1 class="display-3 text-white">Join Our Growing Community</h1>
+                    <p class="fw-normal display-5 text-dark mb-4">Read • Learn • Grow • Win</p>
                     <p class="mb-4 text-dark">
-                        Explore the world of literature, poetry, stories, biography, Islamic books and much more.
-                        Hand-picked fresh reads just for you!
+                        With thousands of books and active competitions, we're building the largest
+                        digital reading community. Be part of something amazing!
                     </p>
-
-                    <a href="#books"
+                    <a href="register.php"
                         class="banner-btn btn border-2 border-white rounded-pill text-dark py-3 px-5">
-                        Browse Books
+                        <i class="fas fa-user-plus me-2"></i> Join Now
                     </a>
                 </div>
             </div>
 
-            <!-- RIGHT IMAGES COLLAGE -->
             <div class="col-lg-6">
-                <div class="position-relative d-flex justify-content-center">
+                <div class="bg-white p-5 rounded shadow-lg">
+                    <h4 class="text-center mb-4">Live Statistics</h4>
+                    <div class="row text-center">
+                        <?php
+                            // Live statistics
+                            $stats = [];
+                            
+                            // Total Books
+                            $result = mysqli_query($con, "SELECT COUNT(*) as total FROM books");
+                            $stats['books'] = mysqli_fetch_assoc($result)['total'];
+                            
+                            // Total Users
+                            $result = mysqli_query($con, "SELECT COUNT(*) as total FROM users");
+                            $stats['users'] = mysqli_fetch_assoc($result)['total'];
+                            
+                            // Free Books
+                            $result = mysqli_query($con, "SELECT COUNT(*) as total FROM books WHERE price = 0 OR is_free_for_members = 1");
+                            $stats['free_books'] = mysqli_fetch_assoc($result)['total'];
+                            
+                            // Active Competitions
+                            $result = mysqli_query($con, "SELECT COUNT(*) as total FROM competitions WHERE end_datetime > NOW()");
+                            $stats['competitions'] = mysqli_fetch_assoc($result)['total'];
+                            ?>
 
-                    <!-- Image 1 -->
-                    <img src="img/book1.jpg"
-                        class="rounded shadow-lg position-absolute"
-                        style="width: 220px; top: 10px; left: 20px; transform: rotate(-5deg);">
+                        <div class="col-6 mb-4">
+                            <div class="counter bg-light rounded p-3">
+                                <i class="fas fa-book fa-2x text-primary mb-2"></i>
+                                <h3 class="mb-0" id="stat-books"><?php echo $stats['books']; ?></h3>
+                                <h6 class="text-muted">Total Books</h6>
+                            </div>
+                        </div>
 
-                    <!-- Image 2 -->
-                    <img src="img/book2.jpg"
-                        class="rounded shadow-lg position-absolute"
-                        style="width: 240px; top: 40px; right: 30px; transform: rotate(7deg); z-index: 2;">
+                        <div class="col-6 mb-4">
+                            <div class="counter bg-light rounded p-3">
+                                <i class="fas fa-users fa-2x text-primary mb-2"></i>
+                                <h3 class="mb-0" id="stat-users"><?php echo $stats['users']; ?></h3>
+                                <h6 class="text-muted">Registered Users</h6>
+                            </div>
+                        </div>
 
-                    <!-- Image 3 -->
-                    <img src="img/book3.jpg"
-                        class="rounded shadow-lg position-relative"
-                        style="width: 260px; margin-top: 100px;">
+                        <div class="col-6 mb-4">
+                            <div class="counter bg-light rounded p-3">
+                                <i class="fas fa-gift fa-2x text-primary mb-2"></i>
+                                <h3 class="mb-0" id="stat-free"><?php echo $stats['free_books']; ?></h3>
+                                <h6 class="text-muted">Free Books</h6>
+                            </div>
+                        </div>
 
+                        <div class="col-6 mb-4">
+                            <div class="counter bg-light rounded p-3">
+                                <i class="fas fa-trophy fa-2x text-primary mb-2"></i>
+                                <h3 class="mb-0" id="stat-comp"><?php echo $stats['competitions']; ?></h3>
+                                <h6 class="text-muted">Live Competitions</h6>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
-<!-- Books Banner End -->
+<!-- Statistics Banner End -->
 
+<!-- Competitions Section Start -->
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-5">
+            <div>
+                <h4 class="text-primary">🏆 Writing Competitions</h4>
+                <h1 class="display-6">Win Prizes & Get Published</h1>
+            </div>
+            <a href="competitions.php" class="btn btn-outline-primary btn-lg">
+                View All <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+        </div>
 
-  
+        <div class="row g-4">
+            <?php
+                // Fetch active competitions
+                $comp_query = "SELECT * FROM competitions 
+                              WHERE end_datetime > NOW() 
+                              ORDER BY start_datetime DESC 
+                              LIMIT 3";
+                $comp_result = mysqli_query($con, $comp_query);
+                
+                if(mysqli_num_rows($comp_result) > 0):
+                    while($comp = mysqli_fetch_assoc($comp_result)):
+                        $days_left = ceil((strtotime($comp['end_datetime']) - time()) / (60 * 60 * 24));
+                ?>
+            <div class="col-lg-4 col-md-6">
+                <div class="competition-card bg-white p-4 rounded shadow-sm h-100">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <span class="badge bg-danger"><?php echo htmlspecialchars($comp['type']); ?></span>
+                        <?php if($days_left > 0): ?>
+                        <span class="badge bg-warning text-dark">
+                            <i class="fas fa-clock me-1"></i> <?php echo $days_left; ?> days left
+                        </span>
+                        <?php endif; ?>
+                    </div>
 
+                    <h5 class="mb-3"><?php echo htmlspecialchars($comp['title']); ?></h5>
+                    <p class="text-muted mb-3"><?php echo substr($comp['description'], 0, 100); ?>...</p>
 
-    <!-- Fact Start -->
-    <div class="container-fluid py-4">
-        <div class="container">
-            <div class="bg-light p-5 rounded">
-                <div class="row g-4 justify-content-center">
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="counter bg-white rounded p-5">
-                            <i class="fa fa-users text-secondary"></i>
-                            <h4>satisfied customers</h4>
-                            <h1>1963</h1>
+                    <div class="mb-4">
+                        <h6 class="text-primary mb-2">Prizes:</h6>
+                        <div class="d-flex gap-3">
+                            <?php if(!empty($comp['first_prize'])): ?>
+                            <div class="text-center">
+                                <div class="bg-warning text-dark rounded-circle d-inline-flex align-items-center justify-content-center"
+                                    style="width: 40px; height: 40px;">
+                                    1st
+                                </div>
+                                <div class="mt-1 small">$<?php echo $comp['first_prize']; ?></div>
+                            </div>
+                            <?php endif; ?>
+
+                            <?php if(!empty($comp['second_prize'])): ?>
+                            <div class="text-center">
+                                <div class="bg-secondary text-white rounded-circle d-inline-flex align-items-center justify-content-center"
+                                    style="width: 40px; height: 40px;">
+                                    2nd
+                                </div>
+                                <div class="mt-1 small">$<?php echo $comp['second_prize']; ?></div>
+                            </div>
+                            <?php endif; ?>
+
+                            <?php if(!empty($comp['third_prize'])): ?>
+                            <div class="text-center">
+                                <div class="bg-dark text-white rounded-circle d-inline-flex align-items-center justify-content-center"
+                                    style="width: 40px; height: 40px;">
+                                    3rd
+                                </div>
+                                <div class="mt-1 small">$<?php echo $comp['third_prize']; ?></div>
+                            </div>
+                            <?php endif; ?>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="counter bg-white rounded p-5">
-                            <i class="fa fa-users text-secondary"></i>
-                            <h4>quality of service</h4>
-                            <h1>99%</h1>
+
+                    <div class="d-flex justify-content-between align-items-center mt-auto">
+                        <small class="text-muted">
+                            <i class="fas fa-calendar-alt me-1"></i>
+                            <?php echo date('d M, Y', strtotime($comp['start_datetime'])); ?>
+                        </small>
+                        <a href="competition-detail.php?id=<?php echo $comp['id']; ?>" class="btn btn-sm btn-primary">
+                            Participate Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <?php 
+                    endwhile;
+                else:
+                ?>
+            <div class="col-12">
+                <div class="alert alert-info text-center">
+                    <i class="fas fa-info-circle me-2"></i>
+                    No active competitions at the moment. Check back soon!
+                </div>
+            </div>
+            <?php endif; ?>
+        </div>
+    </div>
+</div>
+<!-- Competitions Section End -->
+
+<!-- Testimonials Start -->
+<div class="container-fluid testimonial py-4">
+    <div class="container py-5">
+        <div class="testimonial-header text-center">
+            <h4 class="text-primary">Our Testimonial</h4>
+            <h1 class="display-5 mb-5 text-dark">What Our Readers Say!</h1>
+        </div>
+        <div class="owl-carousel testimonial-carousel">
+            <div class="testimonial-item img-border-radius bg-light rounded p-4">
+                <div class="position-relative">
+                    <i class="fa fa-quote-right fa-2x text-secondary position-absolute"
+                        style="bottom: 30px; right: 0;"></i>
+                    <div class="mb-4 pb-4 border-bottom border-secondary">
+                        <p class="mb-0 text-dark">
+                            "The collection of Islamic books helped me deepen my understanding of religion.
+                            The platform is easy to use and books are well organized."
+                        </p>
+                    </div>
+                    <div class="d-flex align-items-center flex-nowrap">
+                        <div class="bg-secondary rounded">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" class="img-fluid rounded"
+                                style="width: 100px; height: 100px;" alt="Ahmed Raza">
+                        </div>
+                        <div class="ms-4 d-block">
+                            <h4 class="text-dark">Ahmed Raza</h4>
+                            <p class="m-0 pb-3 text-success">Student</p>
+                            <div class="d-flex pe-5">
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="counter bg-white rounded p-5">
-                            <i class="fa fa-users text-secondary"></i>
-                            <h4>quality certificates</h4>
-                            <h1>33</h1>
+                </div>
+            </div>
+
+            <div class="testimonial-item img-border-radius bg-light rounded p-4">
+                <div class="position-relative">
+                    <i class="fa fa-quote-right fa-2x text-secondary position-absolute"
+                        style="bottom: 30px; right: 0;"></i>
+                    <div class="mb-4 pb-4 border-bottom border-secondary">
+                        <p class="mb-0 text-dark">
+                            "As a literature student, I found amazing poetry and novels here.
+                            The competitions are a great way to showcase writing skills."
+                        </p>
+                    </div>
+                    <div class="d-flex align-items-center flex-nowrap">
+                        <div class="bg-secondary rounded">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" class="img-fluid rounded"
+                                style="width: 100px; height: 100px;" alt="Sara Khan">
+                        </div>
+                        <div class="ms-4 d-block">
+                            <h4 class="text-dark">Sara Khan</h4>
+                            <p class="m-0 pb-3 text-success">Writer</p>
+                            <div class="d-flex pe-5">
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="counter bg-white rounded p-5">
-                            <i class="fa fa-users text-secondary"></i>
-                            <h4>Available Products</h4>
-                            <h1>789</h1>
+                </div>
+            </div>
+
+            <div class="testimonial-item img-border-radius bg-light rounded p-4">
+                <div class="position-relative">
+                    <i class="fa fa-quote-right fa-2x text-secondary position-absolute"
+                        style="bottom: 30px; right: 0;"></i>
+                    <div class="mb-4 pb-4 border-bottom border-secondary">
+                        <p class="mb-0 text-dark">
+                            "Perfect platform for teachers. Found great educational resources
+                            and my students love the interactive learning materials."
+                        </p>
+                    </div>
+                    <div class="d-flex align-items-center flex-nowrap">
+                        <div class="bg-secondary rounded">
+                            <img src="https://randomuser.me/api/portraits/men/67.jpg" class="img-fluid rounded"
+                                style="width: 100px; height: 100px;" alt="Bilal Ahmed">
+                        </div>
+                        <div class="ms-4 d-block">
+                            <h4 class="text-dark">Bilal Ahmed</h4>
+                            <p class="m-0 pb-3 text-success">Teacher</p>
+                            <div class="d-flex pe-5">
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star-half-alt text-primary"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Fact Start -->
+</div>
+<!-- Testimonials End -->
 
 
-    <!-- Tastimonial Start -->
-    <div class="container-fluid testimonial py-4">
-        <div class="container py-5">
-            <div class="testimonial-header text-center">
-                <h4 class="text-primary">Our Testimonial</h4>
-                <h1 class="display-5 mb-5 text-dark">Our Client Saying!</h1>
-            </div>
-            <div class="owl-carousel testimonial-carousel">
-                <div class="testimonial-item img-border-radius bg-light rounded p-4">
-                    <div class="position-relative">
-                        <i class="fa fa-quote-right fa-2x text-secondary position-absolute"
-                            style="bottom: 30px; right: 0;"></i>
-                        <div class="mb-4 pb-4 border-bottom border-secondary">
-                            <p class="mb-0">Lorem Ipsum is simply dummy text of the printing Ipsum has been the
-                                industry's
-                                standard dummy text ever since the 1500s,
-                            </p>
-                        </div>
-                        <div class="d-flex align-items-center flex-nowrap">
-                            <div class="bg-secondary rounded">
-                                <img src="img/testimonial-1.jpg" class="img-fluid rounded"
-                                    style="width: 100px; height: 100px;" alt="">
-                            </div>
-                            <div class="ms-4 d-block">
-                                <h4 class="text-dark">Client Name</h4>
-                                <p class="m-0 pb-3">Profession</p>
-                                <div class="d-flex pe-5">
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-item img-border-radius bg-light rounded p-4">
-                    <div class="position-relative">
-                        <i class="fa fa-quote-right fa-2x text-secondary position-absolute"
-                            style="bottom: 30px; right: 0;"></i>
-                        <div class="mb-4 pb-4 border-bottom border-secondary">
-                            <p class="mb-0">Lorem Ipsum is simply dummy text of the printing Ipsum has been the
-                                industry's
-                                standard dummy text ever since the 1500s,
-                            </p>
-                        </div>
-                        <div class="d-flex align-items-center flex-nowrap">
-                            <div class="bg-secondary rounded">
-                                <img src="img/testimonial-1.jpg" class="img-fluid rounded"
-                                    style="width: 100px; height: 100px;" alt="">
-                            </div>
-                            <div class="ms-4 d-block">
-                                <h4 class="text-dark">Client Name</h4>
-                                <p class="m-0 pb-3">Profession</p>
-                                <div class="d-flex pe-5">
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-item img-border-radius bg-light rounded p-4">
-                    <div class="position-relative">
-                        <i class="fa fa-quote-right fa-2x text-secondary position-absolute"
-                            style="bottom: 30px; right: 0;"></i>
-                        <div class="mb-4 pb-4 border-bottom border-secondary">
-                            <p class="mb-0">Lorem Ipsum is simply dummy text of the printing Ipsum has been the
-                                industry's
-                                standard dummy text ever since the 1500s,
-                            </p>
-                        </div>
-                        <div class="d-flex align-items-center flex-nowrap">
-                            <div class="bg-secondary rounded">
-                                <img src="img/testimonial-1.jpg" class="img-fluid rounded"
-                                    style="width: 100px; height: 100px;" alt="">
-                            </div>
-                            <div class="ms-4 d-block">
-                                <h4 class="text-dark">Client Name</h4>
-                                <p class="m-0 pb-3">Profession</p>
-                                <div class="d-flex pe-5">
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Tastimonial End -->
-                </div>
 
-    <?php
-     include('includes/footer.php');
-     ?>
-
-        
+<?php
+          include('includes/footer.php');
+          ?>

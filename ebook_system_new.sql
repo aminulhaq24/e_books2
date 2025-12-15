@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 09, 2025 at 08:47 PM
+-- Generation Time: Dec 14, 2025 at 04:38 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -56,9 +56,28 @@ CREATE TABLE `books` (
 INSERT INTO `books` (`book_id`, `title`, `author`, `category_id`, `subcategory_id`, `description`, `cover_image`, `pdf_file`, `soft_copy_file`, `cd_available`, `price`, `created_at`, `format_type`, `subscription_duration`, `cd_price`, `weight`, `delivery_charges`, `is_free_for_members`, `is_competition_winner`) VALUES
 (1, 'Islamic Moral Values', 'Amin ul haq', 22, 8, 'lorem ipsum was good enough cold war', '1764562520_pic 1 customer (4).jpg', '1764562520_pq2.docx', '', 'No', 0, '2025-12-01 04:15:20', 'HARDCOPY', 0, 0.00, 0.00, 0.00, 0, 0),
 (4, 'Bang e dara', 'Allama Iqbal', 22, 18, 'This is one of the most popular poetry book in South Asia and the entire world as well.', '1765009231_metal wall13.webp', '1765009231_pq2.docx', '', 'Yes', 600, '2025-12-06 08:20:31', 'HARDCOPY', 0, 0.00, 0.00, 0.00, 0, 0),
-(5, 'X-men 3', 'taimoor', 22, 18, 'nice book ever never', '1765023285_metal wall14.webp', '', '', 'No', 788, '2025-12-06 12:14:45', 'HARDCOPY', 0, 0.00, 0.00, 0.00, 0, 0),
-(6, 'jghjg hbm99', 'wahab', 22, 11, 'gv jkkj khlknjl', '1765213279_wall paper6.webp', '1765213279_User Guide for Jensen Decors.docx', '', 'No', 980, '2025-12-08 17:01:19', 'HARDCOPY', 0, 0.00, 0.00, 0.00, 0, 0),
-(7, 'dsf bkbk jnkk', 'Anwar', 22, 11, 'chg bhjkj jbjk', '1765213448_metal wall9.webp', '', '', 'Yes', 0, '2025-12-08 17:04:08', 'HARDCOPY', 0, 0.00, 0.00, 0.00, 0, 0);
+(8, 'Sixth sense jjhb', 'wajahat khan', 22, 8, 'asd loi mlkl kjkdf kjnlkdsf kjnds', '1765478255_metal wall11.webp', '1765478255_Repeat assignment - Copy.pdf', '', 'Yes', 0, '2025-12-11 18:37:35', 'HARDCOPY', 0, 0.00, 0.00, 0.00, 1, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cart`
+--
+
+CREATE TABLE `cart` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `book_id` int(11) NOT NULL,
+  `quantity` int(11) DEFAULT 1,
+  `added_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`id`, `user_id`, `book_id`, `quantity`, `added_at`) VALUES
+(1, 4, 4, 2, '2025-12-14 12:44:27');
 
 -- --------------------------------------------------------
 
@@ -111,7 +130,7 @@ INSERT INTO `competitions` (`id`, `title`, `type`, `start_datetime`, `end_dateti
 (1, 'annual comp', 'Essay', '2025-12-10 12:30:00', '2025-12-22 12:30:00', 'sc fgfd ggf hjghj jy', NULL, '5000', '0', '0', '2025-12-02 07:09:41', 100, 0, NULL, NULL),
 (3, 'ewre', 'Quiz', '2025-12-05 12:35:00', '2025-12-25 12:35:00', 'ghhg bhjb wdw pip xz lkl', NULL, '', '5000', '3000', '2025-12-02 07:36:29', 100, 0, NULL, NULL),
 (4, 'weregtrt', 'Story Writing', '2025-12-05 12:38:00', '2025-12-28 12:38:00', 'dwad nh cxx uju ikol', NULL, '6000', '5000', '3000', '2025-12-02 07:38:45', 100, 0, NULL, NULL),
-(13, 'jghj', 'Story Writing', '2026-01-06 18:34:00', '2025-12-30 18:34:00', 'gfdg hkhu cxf iu iohjo', NULL, '7888', '5666', '2334', '2025-12-02 13:35:24', 100, 0, NULL, NULL);
+(13, 'jghj', 'Story Writing', '2025-01-06 18:34:00', '2025-02-27 18:34:00', 'gfdg hkhu cxf iu iohjo bbhj', NULL, '7888', '5666', '2334', '2025-12-02 13:35:24', 100, 0, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -205,6 +224,14 @@ CREATE TABLE `orders` (
   `placed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`id`, `user_id`, `book_id`, `order_type`, `subscription_months`, `quantity`, `price`, `shipping_charges`, `total_amount`, `payment_method`, `payment_status`, `status`, `delivery_date`, `tracking_number`, `shipping_address`, `placed_at`) VALUES
+(1, 4, NULL, 'HARDCOPY', 0, 3, 1800.00, 0.00, 1800.00, 'credit_card', 'PENDING', 'PENDING', '2025-12-21', NULL, 'fzf bhb kjnk, Faisalabad, Punjab, 75800, Pakistan', '2025-12-14 13:32:05'),
+(2, 4, NULL, 'HARDCOPY', 0, 1, 600.00, 0.00, 600.00, 'credit_card', 'PENDING', 'PENDING', '2025-12-21', NULL, 'fzf bhb kjnk, Faisalabad, Punjab, 75800, Pakistan', '2025-12-14 13:37:50');
+
 -- --------------------------------------------------------
 
 --
@@ -221,6 +248,14 @@ CREATE TABLE `order_items` (
   `subscription_months` int(11) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `order_items`
+--
+
+INSERT INTO `order_items` (`item_id`, `order_id`, `book_id`, `format`, `quantity`, `price`, `subscription_months`) VALUES
+(1, 1, 4, 'HARDCOPY', 3, 600.00, 0),
+(2, 2, 4, 'HARDCOPY', 1, 600.00, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -236,6 +271,14 @@ CREATE TABLE `payments` (
   `transaction_ref` varchar(255) DEFAULT NULL,
   `paid_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `payments`
+--
+
+INSERT INTO `payments` (`id`, `order_id`, `user_id`, `paid_amount`, `method`, `transaction_ref`, `paid_at`) VALUES
+(1, 1, 4, 1800.00, 'credit_card', NULL, '2025-12-14 13:32:05'),
+(2, 2, 4, 600.00, 'credit_card', NULL, '2025-12-14 13:37:50');
 
 -- --------------------------------------------------------
 
@@ -256,7 +299,7 @@ CREATE TABLE `subcategories` (
 INSERT INTO `subcategories` (`id`, `category_id`, `subcategory_name`) VALUES
 (8, 22, 'Islamic'),
 (9, 23, 'Upcoming'),
-(11, 22, 'Novels / literature'),
+(11, 22, 'Novels & literature'),
 (12, 22, 'Technology'),
 (13, 22, 'Kids Learning'),
 (14, 22, 'Business '),
@@ -278,19 +321,28 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `name` varchar(150) NOT NULL,
   `email` varchar(150) NOT NULL,
+  `phone` varchar(20) DEFAULT NULL,
   `password` varchar(255) NOT NULL,
   `role` enum('user','admin','dealer') DEFAULT 'user',
+  `status` enum('active','inactive','suspended') DEFAULT 'active',
   `address` text DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `city` varchar(100) DEFAULT NULL,
+  `country` varchar(100) DEFAULT NULL,
+  `postal_code` varchar(20) DEFAULT NULL,
+  `profile_image` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `role`, `address`, `created_at`) VALUES
-(1, 'Amin ul haq', 'amin@gmail.com', '$2y$10$.JhboR52TZYViJdhrgAMFOtz7Ae3sROyJS3bnxXg.8P0teZVtMH0C', 'admin', 'metroville site karachi', '2025-11-29 08:08:04'),
-(2, 'Affan Khan', 'affan@gmail.com', '$2y$10$19WIesJAt.ic8.Cpolvq/upobCX3RsOYw9iAvTdFl3AQ8dGkeoGGi', 'dealer', 'metroville site karachi', '2025-11-29 10:05:02');
+INSERT INTO `users` (`id`, `name`, `email`, `phone`, `password`, `role`, `status`, `address`, `city`, `country`, `postal_code`, `profile_image`, `created_at`, `updated_at`) VALUES
+(1, 'Amin ul haq', 'amin@gmail.com', NULL, '$2y$10$.JhboR52TZYViJdhrgAMFOtz7Ae3sROyJS3bnxXg.8P0teZVtMH0C', 'admin', 'active', 'metroville site karachi', NULL, NULL, NULL, NULL, '2025-11-29 08:08:04', '2025-12-13 19:00:02'),
+(2, 'Affan Khan', 'affan@gmail.com', NULL, '$2y$10$19WIesJAt.ic8.Cpolvq/upobCX3RsOYw9iAvTdFl3AQ8dGkeoGGi', 'dealer', 'active', 'metroville site karachi', NULL, NULL, NULL, NULL, '2025-11-29 10:05:02', '2025-12-13 19:00:02'),
+(3, 'Amin ul haq 45', 'amin45@gmail.com', '03216790876', '$2y$10$AuzIVAnXgE6itNy2fktBS.wVRoWYMrX40sHZk4VoYZojOHHFY.Aze', 'user', 'active', NULL, NULL, NULL, NULL, NULL, '2025-12-13 19:09:40', '2025-12-13 19:09:40'),
+(4, 'Amin 678', 'amin47@gmail.com', '03216790098', '$2y$10$ccsdHh0oWmWry82s330QXukPjN9g/F13AXewwJj.n/tn1Zz7.rZvO', 'user', 'active', 'fzf bhb kjnk', NULL, NULL, NULL, NULL, '2025-12-13 19:24:39', '2025-12-13 19:24:39');
 
 -- --------------------------------------------------------
 
@@ -315,6 +367,14 @@ CREATE TABLE `winners` (
 --
 ALTER TABLE `books`
   ADD PRIMARY KEY (`book_id`);
+
+--
+-- Indexes for table `cart`
+--
+ALTER TABLE `cart`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `unique_cart_item` (`user_id`,`book_id`),
+  ADD KEY `book_id` (`book_id`);
 
 --
 -- Indexes for table `categories`
@@ -377,7 +437,8 @@ ALTER TABLE `order_items`
 --
 ALTER TABLE `payments`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `user_id` (`user_id`);
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `payments_ibfk_1` (`order_id`);
 
 --
 -- Indexes for table `subcategories`
@@ -409,7 +470,13 @@ ALTER TABLE `winners`
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `book_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `book_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `cart`
+--
+ALTER TABLE `cart`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -451,19 +518,19 @@ ALTER TABLE `dealers`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `payments`
 --
 ALTER TABLE `payments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `subcategories`
@@ -475,7 +542,7 @@ ALTER TABLE `subcategories`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `winners`
@@ -486,6 +553,13 @@ ALTER TABLE `winners`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `cart`
+--
+ALTER TABLE `cart`
+  ADD CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `cart_ibfk_2` FOREIGN KEY (`book_id`) REFERENCES `books` (`book_id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `competition_rules`
