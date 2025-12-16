@@ -83,11 +83,12 @@
     transition: 0.5s;
     background: var(--bs-white);
     border: 0;
+    width: 100%;
 }
 
 .topbar {
     padding: 20px;
-    border-radius: 230px 100px;
+    border-radius: 8px;
 }
 
 .topbar .top-info {
@@ -603,6 +604,10 @@
 
 .fruite-categorie li:hover a {
     color: #ff6f00 !important;
+}
+
+.nav-item {
+    list-style: none;
 }
 
 

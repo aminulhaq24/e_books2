@@ -255,10 +255,10 @@ if(!isset($_SESSION['admin_logged_in'])){
                 </a>
                 <div id="booksCollapse" class="collapse">
                     <div class="collapse-inner">
-                        <a class="collapse-item" href="upload_book.php">
+                        <a class="collapse-item" href="add_book.php">
                             <i class="fas fa-upload fa-sm me-1"></i> Upload New Book
                         </a>
-                        <a class="collapse-item" href="manage_books.php">
+                        <a class="collapse-item" href="book_lists.php">
                             <i class="fas fa-list fa-sm me-1"></i> Manage Books
                         </a>
                         <a class="collapse-item" href="manage_pdf_access.php">

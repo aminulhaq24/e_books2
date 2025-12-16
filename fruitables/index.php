@@ -208,7 +208,7 @@ include('includes/nav.php');
                                 while($book = mysqli_fetch_assoc($allBooks)):
                             ?>
                         <div class="col-md-6 col-lg-4 col-xl-3">
-                            <div class="rounded position-relative fruite-item">
+                            <div class="rounded position-relative me-0 ms-0 fruite-item">
                                 <div class="fruite-img">
                                     <img src="../admin_panel/uploads/<?php echo $book['cover_image']; ?>"
                                         class="img-fluid w-100 rounded-top"
@@ -226,7 +226,7 @@ include('includes/nav.php');
                                     <p class="small text-muted mb-3">
                                         <?php 
                                             $description = strip_tags($book['description']);
-                                            echo strlen($description) > 80 ? substr($description, 0, 80) . '...' : $description;
+                                            echo strlen($description) > 115 ? substr($description, 0, 115) . '...' : $description;
                                             ?>
                                     </p>
                                     <div class="d-flex justify-content-between flex-lg-wrap align-items-center">
@@ -302,7 +302,7 @@ include('includes/nav.php');
                                     <p class="small text-muted mb-3">
                                         <?php 
                                             $description = strip_tags($book['description']);
-                                            echo strlen($description) > 80 ? substr($description, 0, 80) . '...' : $description;
+                                            echo strlen($description) > 100 ? substr($description, 0, 100) . '...' : $description;
                                             ?>
                                     </p>
                                     <div class="d-flex justify-content-between flex-lg-wrap align-items-center">

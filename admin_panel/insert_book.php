@@ -172,7 +172,7 @@ if(mysqli_query($con, $sql)) {
                 icon: "success",
                 confirmButtonText: "Continue"
             }).then(() => {
-                window.location.href = "manage_books.php";
+                window.location.href = "book_lists.php";
             });
         </script>
     </body>

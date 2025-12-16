@@ -387,8 +387,7 @@ $user = mysqli_fetch_assoc($user_result);
                                 </div>
                             </div>
 
-                            
-                            
+                                                   
                             <div class="payment-option" data-method="cash_on_delivery">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="payment_method" 

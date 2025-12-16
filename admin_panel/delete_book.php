@@ -4,10 +4,10 @@ include('includes/connection.php');
 session_start();
 
 // Check if admin is logged in
-if(!isset($_SESSION['admin_logged_in'])) {
-    header("Location: login.php");
-    exit;
-}
+// if(!isset($_SESSION['admin_logged_in'])) {
+//     header("Location: login.php");
+//     exit;
+// }
 
 // Get book ID
 $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
@@ -49,7 +49,7 @@ $result = mysqli_query($con, $delete_sql);
 
 if($result) {
     // Check redirect destination
-   header(Location: 'index.php');
+   header('Location: book_lists.php');
 }
 
 ?>

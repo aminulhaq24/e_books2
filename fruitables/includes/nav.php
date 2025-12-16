@@ -315,8 +315,21 @@ $page_keywords = "eBooks, Online Library, Digital Books, Reading Platform, Books
                     <a href="refund.php" class="text-white"><small class="text-white ms-2">Sales and Refunds</small></a>
                 </div>
             </div>
+            <div class="position-absolute" style="left: 96%; top: 20px">
+                 <a href="cart.php" class="position-relative me-4 my-auto">
+                            <!-- <i class="fa fa-shopping-bag fa-2x text-primary"></i> -->
+                            <img src="img/cart-image.png"  alt="">
+                            <span
+                            
+                                class="cart-count position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1"
+                                style="top: -8px; left: 18px; height: 20px; min-width: 20px;">
+                                <?php echo isset($_SESSION['cart']['total_items']) ? $_SESSION['cart']['total_items'] : 0; ?>
+                            </span>
+                        </a>
+            </div>
+            
         </div>
-        <div class="container px-0">
+        <div class="container-fluid px-0">
             <nav class="navbar navbar-light bg-white navbar-expand-xl">
                 <a href="index.php" class="navbar-brand">
                     <h1 class="text-primary display-6">
@@ -362,27 +375,71 @@ $page_keywords = "eBooks, Online Library, Digital Books, Reading Platform, Books
                         <a href="competitions.php" class="nav-item nav-link">Competitions</a>
                         <a href="free-books.php" class="nav-item nav-link">Free Books</a>
                         <a href="contact.php" class="nav-item nav-link">Contact</a>
-                        <a href="logout.php" class="nav-item nav-link">logout</a>
                     </div>
                     <div class="d-flex m-3 me-0">
                         <button
-                            class="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4"
+                            class="btn-search btn  btn-md-square rounded-circle bg-white me-4"
                             data-bs-toggle="modal" data-bs-target="#searchModal">
                             <i class="fas fa-search text-primary"></i>
                         </button>
-                        <a href="cart.php" class="position-relative me-4 my-auto">
-                            <i class="fa fa-shopping-bag fa-2x text-primary"></i>
-                            <span
-                                class="cart-count position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1"
-                                style="top: -5px; left: 15px; height: 20px; min-width: 20px;">
-                                <?php echo isset($_SESSION['cart']['total_items']) ? $_SESSION['cart']['total_items'] : 0; ?>
-                            </span>
-                        </a>
+                        
 
-                        <a href="<?php echo isset($_SESSION['user_id']) ? 'profile.php' : 'login.php'; ?>"
+                        <!-- <a href="<?php echo isset($_SESSION['user_id']) ? 'profile.php' : 'login.php'; ?>"
                             class="my-auto">
                             <i class="fas fa-user fa-2x text-primary"></i>
-                        </a>
+                        </a> -->
+
+                        <!-- profile -->
+
+                        <?php if (isset($_SESSION['user_id'])): ?>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-user-circle me-1"></i>
+                                <?php echo htmlspecialchars($_SESSION['user_name'] ?? 'Account'); ?>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="userDropdown">
+                                <li><a class="dropdown-item" href="account.php">
+                                        <i class="fas fa-tachometer-alt me-2"></i> Dashboard
+                                    </a></li>
+                                <li><a class="dropdown-item" href="my-orders.php">
+                                        <i class="fas fa-shopping-bag me-2"></i> My Orders
+                                    </a></li>
+                                <li><a class="dropdown-item" href="my-library.php">
+                                        <i class="fas fa-book me-2"></i> My Library
+                                    </a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="edit-profile.php">
+                                        <i class="fas fa-user-edit me-2"></i> Edit Profile
+                                    </a></li>
+                                <li><a class="dropdown-item" href="change-password.php">
+                                        <i class="fas fa-key me-2"></i> Change Password
+                                    </a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item text-danger" href="logout.php">
+                                        <i class="fas fa-sign-out-alt me-2"></i> Logout
+                                    </a></li>
+                            </ul>
+                        </li>
+                        <?php else: ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.php">
+                                <i class="fas fa-sign-in-alt me-1"></i> Login
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="register.php">
+                                <i class="fas fa-user-plus me-1"></i> Register
+                            </a>
+                        </li>
+                        <?php endif; ?>
+
+
+                        <!-- frofile end -->
                     </div>
                 </div>
             </nav>

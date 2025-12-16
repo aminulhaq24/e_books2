@@ -530,7 +530,7 @@ LIMIT 5
                                 <th>Files</th>
                                 <th>Price</th>
                                 <th>Added On</th>
-                                <th>Action</th>
+                                
                             </tr>
                         </thead>
                         <tbody>
@@ -575,28 +575,7 @@ LIMIT 5
                                   echo "Rs. " . $book['price'];
                                  ?></td>
                                 <td><?= date('M j, Y', strtotime($book['created_at'])) ?></td>
-                                <td>
-                                    <div class="btn-group" role="group">
-                                        <!-- Edit Button -->
-                                        <a href="edit_book.php?id=<?= $book['book_id'] ?>"
-                                            class="btn btn-md btn-outline-primary" title="Edit Book">
-                                            <i class="fas fa-edit"></i>
-                                        </a>
-
-                                        <!-- Delete Button with Confirmation -->
-                                        <a href="delete_book.php?id=<?= $book['book_id']?>"
-                                            class="btn btn-md btn-outline-danger" title="Delete Book"
-                                            onclick="return confirm('Delete this book?');">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </a>
-
-                                        <!-- Quick View Button -->
-                                        <a href="book_preview.php?id=<?= $book['book_id'] ?>"
-                                            class="btn btn-md btn-outline-info" title="Quick Preview" target="_blank">
-                                            <i class="fas fa-eye"></i>
-                                        </a>
-                                    </div>
-                                </td>
+                               
 
                             </tr>
                             <?php endwhile; ?>

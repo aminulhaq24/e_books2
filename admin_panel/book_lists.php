@@ -347,7 +347,7 @@ ORDER BY book_id DESC");
                                 </td>
                                 <td>
                                     <div class="fw-bold">
-                                        <?= htmlspecialchars(substr($book['title'], 0, 35)) ?><?= strlen($book['title']) > 35 ? '...' : '' ?>
+                                        <?= htmlspecialchars(substr($book['title'], 0, 25)) ?><?= strlen($book['title']) > 35 ? '...' : '' ?>
                                     </div>
                                     <small class="text-muted">by <?= htmlspecialchars($book['author']) ?></small>
                                 </td>
@@ -382,7 +382,7 @@ ORDER BY book_id DESC");
                                 <td>
                                     <div class="btn-group" role="group">
                                         <!-- EDIT BUTTON in book_lists.php -->
-                                        <button class="btn btn-sm btn-gradient-edit editBookBtn" 
+                                        <button class="btn btn-md btn-gradient-edit  editBookBtn" title="Edit Book"
                                                 data-id="<?= $book['book_id']; ?>"
                                                 data-title="<?= htmlspecialchars($book['title']); ?>"
                                                 data-author="<?= htmlspecialchars($book['author']); ?>"
@@ -402,14 +402,7 @@ ORDER BY book_id DESC");
                                                 data-bs-target="#editBookModal">
                                             <i class="fas fa-edit"></i> Edit
                                         </button>
-
-                                        <!-- Edit Button -->
-                                        <a href="edit_book.php?id=<?= $book['book_id'] ?>"
-                                            class="btn btn-md btn-outline-primary" title="Edit Book">
-                                            <i class="fas fa-edit"></i>
-                                        </a>
                                         
-
                                         <!-- Delete Button with Confirmation -->
                                         <a href="delete_book.php?id=<?= $book['book_id']?>"
                                             class="btn btn-md btn-outline-danger" title="Delete Book"
