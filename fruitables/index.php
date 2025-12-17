@@ -208,41 +208,85 @@ include('includes/nav.php');
                                 while($book = mysqli_fetch_assoc($allBooks)):
                             ?>
                         <div class="col-md-6 col-lg-4 col-xl-3">
-                            <div class="rounded position-relative me-0 ms-0 fruite-item">
-                                <div class="fruite-img">
-                                    <img src="../admin_panel/uploads/<?php echo $book['cover_image']; ?>"
-                                        class="img-fluid w-100 rounded-top"
-                                        alt="<?php echo htmlspecialchars($book['title']); ?>"
-                                        style="height: 250px; object-fit: cover;">
-                                </div>
-                                <div class="text-white bg-secondary px-3 py-1 rounded position-absolute category-badge"
-                                    style="top: 10px; left: 10px;">
-                                    <?php echo htmlspecialchars($book['subcategory_name']); ?>
-                                </div>
-                                <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                    <h6 class="mb-2"><?php echo htmlspecialchars($book['title']); ?></h6>
-                                    <p class="small text-muted mb-2">by
-                                        <?php echo htmlspecialchars($book['author']); ?></p>
-                                    <p class="small text-muted mb-3">
-                                        <?php 
-                                            $description = strip_tags($book['description']);
-                                            echo strlen($description) > 115 ? substr($description, 0, 115) . '...' : $description;
-                                            ?>
-                                    </p>
-                                    <div class="d-flex justify-content-between flex-lg-wrap align-items-center">
-                                        <?php if($book['price'] == 0): ?>
-                                        <span class="free-badge">FREE</span>
-                                        <?php else: ?>
-                                        <p class="price-tag mb-0">$<?php echo $book['price']; ?></p>
-                                        <?php endif; ?>
-                                        <a href="book-detail.php?id=<?php echo $book['book_id']; ?>"
-                                            class="btn border border-secondary rounded-pill px-3 text-primary">
-                                            <i class="fa fa-eye me-2"></i> View
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+    <div class="rounded position-relative fruite-item">
+
+        <!-- IMAGE -->
+        <div class="fruite-img">
+            <a href="book-detail.php?id=<?php echo $book['book_id']; ?>">
+                <img src="../admin_panel/uploads/<?php echo $book['cover_image']; ?>"
+                     class="img-fluid w-100 rounded-top"
+                     alt="<?php echo htmlspecialchars($book['title']); ?>"
+                     style="height: 250px; object-fit: cover;">
+            </a>
+        </div>
+
+        <!-- CATEGORY BADGE -->
+        <div class="text-white bg-secondary px-3 py-1 rounded position-absolute category-badge"
+             style="top: 10px; left: 10px;">
+            <?php echo htmlspecialchars($book['subcategory_name']); ?>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+
+            <h6 class="mb-2">
+                <a href="book-detail.php?id=<?php echo $book['book_id']; ?>"
+                   class="text-dark text-decoration-none">
+                    <?php echo htmlspecialchars($book['title']); ?>
+                </a>
+            </h6>
+
+            <p class="small text-muted mb-2">
+                by <?php echo htmlspecialchars($book['author']); ?>
+            </p>
+
+            <a href="book-detail.php?id=<?php echo $book['book_id']; ?>"
+               class="text-muted text-decoration-none">
+                <p class="small mb-3">
+                    <?php
+                        $description = strip_tags($book['description']);
+                        echo strlen($description) > 115
+                            ? substr($description, 0, 115) . '...'
+                            : $description;
+                    ?>
+                </p>
+            </a>
+
+            <!-- PRICE / ACTION -->
+            <div class="d-flex justify-content-between align-items-center">
+
+                <?php if($book['price'] == 0 || $book['is_free_for_members'] == 1): ?>
+
+                    <!-- FREE BOOK -->
+                    <span class="badge bg-success">FREE</span>
+
+                    <a href="download.php?id=<?php echo $book['book_id']; ?>"
+                       class="btn border border-success rounded-pill px-3 text-success">
+                        <i class="fa fa-download me-2"></i> Download
+                    </a>
+
+                <?php else: ?>
+
+                    <!-- PAID BOOK -->
+                    <p class="price-tag mb-0">
+                        Rs <?php echo $book['price']; ?>
+                    </p>
+
+                    <a href="javascript:void(0);"
+                       class="btn border border-primary rounded-pill px-3 text-primary add-to-cart"
+                       data-id="<?php echo $book['book_id']; ?>"
+                       data-title="<?php echo htmlspecialchars($book['title']); ?>">
+                        <i class="fa fa-cart-plus me-2"></i> Add to Cart
+                    </a>
+
+                <?php endif; ?>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
                         <?php 
                                 endwhile;
                             else:
@@ -283,42 +327,86 @@ include('includes/nav.php');
                             if(mysqli_num_rows($books) > 0):
                                 while($book = mysqli_fetch_assoc($books)):
                             ?>
-                        <div class="col-md-6 col-lg-4 col-xl-3">
-                            <div class="rounded position-relative fruite-item">
-                                <div class="fruite-img">
-                                    <img src="../admin_panel/uploads/<?php echo $book['cover_image']; ?>"
-                                        class="img-fluid w-100 rounded-top"
-                                        alt="<?php echo htmlspecialchars($book['title']); ?>"
-                                        style="height: 250px; object-fit: cover;">
-                                </div>
-                                <div class="text-white bg-secondary px-3 py-1 rounded position-absolute category-badge"
-                                    style="top: 10px; left: 10px;">
-                                    <?php echo htmlspecialchars($book['subcategory_name']); ?>
-                                </div>
-                                <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                    <h6 class="mb-2"><?php echo htmlspecialchars($book['title']); ?></h6>
-                                    <p class="small text-muted mb-2">by
-                                        <?php echo htmlspecialchars($book['author']); ?></p>
-                                    <p class="small text-muted mb-3">
-                                        <?php 
-                                            $description = strip_tags($book['description']);
-                                            echo strlen($description) > 100 ? substr($description, 0, 100) . '...' : $description;
-                                            ?>
-                                    </p>
-                                    <div class="d-flex justify-content-between flex-lg-wrap align-items-center">
-                                        <?php if($book['price'] == 0): ?>
-                                        <span class="free-badge">FREE</span>
-                                        <?php else: ?>
-                                        <p class="price-tag mb-0">$<?php echo $book['price']; ?></p>
-                                        <?php endif; ?>
-                                        <a href="book-detail.php?id=<?php echo $book['book_id']; ?>"
-                                            class="btn border border-secondary rounded-pill px-3 text-primary">
-                                            <i class="fa fa-eye me-2"></i> View
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                       <div class="col-md-6 col-lg-4 col-xl-3">
+    <div class="rounded position-relative fruite-item">
+
+        <!-- IMAGE -->
+        <div class="fruite-img">
+            <a href="book-detail.php?id=<?php echo $book['book_id']; ?>">
+                <img src="../admin_panel/uploads/<?php echo $book['cover_image']; ?>"
+                     class="img-fluid w-100 rounded-top"
+                     alt="<?php echo htmlspecialchars($book['title']); ?>"
+                     style="height: 250px; object-fit: cover;">
+            </a>
+        </div>
+
+        <!-- CATEGORY BADGE -->
+        <div class="text-white bg-secondary px-3 py-1 rounded position-absolute category-badge"
+             style="top: 10px; left: 10px;">
+            <?php echo htmlspecialchars($book['subcategory_name']); ?>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+
+            <h6 class="mb-2">
+                <a href="book-detail.php?id=<?php echo $book['book_id']; ?>"
+                   class="text-dark text-decoration-none">
+                    <?php echo htmlspecialchars($book['title']); ?>
+                </a>
+            </h6>
+
+            <p class="small text-muted mb-2">
+                by <?php echo htmlspecialchars($book['author']); ?>
+            </p>
+
+            <a href="book-detail.php?id=<?php echo $book['book_id']; ?>"
+               class="text-muted text-decoration-none">
+                <p class="small mb-3">
+                    <?php
+                        $description = strip_tags($book['description']);
+                        echo strlen($description) > 115
+                            ? substr($description, 0, 115) . '...'
+                            : $description;
+                    ?>
+                </p>
+            </a>
+
+            <!-- PRICE / ACTION -->
+            <div class="d-flex justify-content-between align-items-center">
+
+                <?php if($book['price'] == 0 || $book['is_free_for_members'] == 1): ?>
+
+                    <!-- FREE BOOK -->
+                    <span class="badge bg-success">FREE</span>
+
+                    <a href="download.php?id=<?php echo $book['book_id']; ?>"
+                       class="btn border border-success rounded-pill px-3 text-success">
+                        <i class="fa fa-download me-2"></i> Download
+                    </a>
+
+                <?php else: ?>
+
+                    <!-- PAID BOOK -->
+                    <p class="price-tag mb-0">
+                        Rs <?php echo $book['price']; ?>
+                    </p>
+
+                    <a href="javascript:void(0);"
+                       class="btn border border-primary rounded-pill px-3 text-primary add-to-cart"
+                       data-id="<?php echo $book['book_id']; ?>"
+                       data-title="<?php echo htmlspecialchars($book['title']); ?>">
+                        <i class="fa fa-cart-plus me-2"></i> Add to Cart
+                    </a>
+
+                <?php endif; ?>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
                         <?php 
                                 endwhile;
                             else:
@@ -638,3 +726,53 @@ include('includes/nav.php');
 <?php
           include('includes/footer.php');
           ?>
+
+          <script>
+
+// Add to Cart Functionality
+document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', function() {
+        const bookId = this.getAttribute('data-id');
+        const bookTitle = this.getAttribute('data-title');
+
+        const originalHTML = this.innerHTML;
+        this.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+        this.disabled = true;
+
+        fetch('add-to-cart.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `book_id=${bookId}&action=add`
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+
+
+                    // Update cart count in navbar using server response
+                    const cartCount = document.querySelector(
+                            '.position-relative .position-absolute span') ||
+                        document.querySelector('.position-relative span');
+                    if (cartCount) {
+                        cartCount.textContent = data.cart_count;
+                    }
+
+                    alert(`"${bookTitle}" added to cart successfully!`);
+                } else {
+                    alert(data.message || 'Failed to add to cart');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            })
+            .finally(() => {
+                this.innerHTML = originalHTML;
+                this.disabled = false;
+            });
+    });
+});
+
+          </script>

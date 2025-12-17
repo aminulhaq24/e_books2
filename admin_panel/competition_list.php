@@ -11,7 +11,7 @@ $res = mysqli_query($con, $sql);
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h3 class="text-primary mb-0"><i class="fa fa-trophy"></i> Competitions</h3>
 
-        <button class="btn btn-primary shadow-sm" data-toggle="modal" data-target="#addCompetitionModal">
+        <button class="btn btn-primary shadow-sm" data-bs-toggle="modal" data-bs-target="#addCompetitionModal">
             + Add New Competition
         </button>
     </div>
@@ -105,7 +105,7 @@ $res = mysqli_query($con, $sql);
             <form action="insert_competition.php" method="POST">
                 <div class="modal-header">
                     <h5 class="modal-title">Add New Competition</h5>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
                 </div>
 
                 <div class="modal-body">

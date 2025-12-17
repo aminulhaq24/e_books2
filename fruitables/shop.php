@@ -115,12 +115,12 @@ $subcategories_result = mysqli_query($con, "SELECT * FROM subcategories WHERE ca
     background: #fff;
     height: 100%;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .book-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
 }
 
 /* IMAGE */
@@ -545,75 +545,79 @@ $subcategories_result = mysqli_query($con, "SELECT * FROM subcategories WHERE ca
                     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
                         <div class="book-card">
                             <!-- Book Image -->
-                            <div class="book-img-container">
-                                <img src="../admin_panel/uploads/<?php echo $book['cover_image']; ?>"
-                                    alt="<?php echo htmlspecialchars($book['title']); ?>" class="book-img"
-                                    onerror="this.src='img/default-book.jpg'">
-                                <span class="book-badge">
-                                    <?php echo htmlspecialchars($book['subcategory_name']); ?>
-                                </span>
-                            </div>
+                            <a href="book-detail.php?id=<?php echo $book['book_id']; ?>">
+                                <div class="book-img-container">
+                                    <img src="../admin_panel/uploads/<?php echo $book['cover_image']; ?>"
+                                        alt="<?php echo htmlspecialchars($book['title']);  ?>" class="book-img"
+                                        onerror="this.src='img/default-book.jpg'">
 
-                            <!-- Book Details -->
-                            <div class="p-3">
-                                <h6 class="mb-2">
-                                    <a href="book-detail.php?id=<?php echo $book['book_id']; ?>"
-                                        class="text-dark text-decoration-none">
-                                        <?php echo htmlspecialchars($book['title']); ?>
-                                    </a>
-                                </h6>
-                                <p class="small text-muted mb-2">
-                                    <i class="fas fa-user-edit me-1"></i>
-                                    <?php echo htmlspecialchars($book['author']); ?>
-                                </p>
-                                <p class="small text-muted mb-3">
-                                    <?php 
-                                            $desc = strip_tags($book['description']);
-                                            echo strlen($desc) > 60 ? substr($desc, 0, 60) . '...' : $desc;
-                                            ?>
-                                </p>
-
-                                <!-- Price & Actions -->
-                                <div class="d-flex justify-content-between align-items-center">
-
-                                    <?php 
-                                    $isFree = ($book['price'] == 0 || $book['is_free_for_members'] == 1);
-                                     ?>
-
-                                    <!-- PRICE / FREE TAG -->
-                                    <?php if($isFree): ?>
-                                    <span class="free-tag">FREE</span>
-                                    <?php else: ?>
-                                    <span class="book-price mt-4">Rs <?php echo $book['price']; ?></span>
-                                    <?php endif; ?>
-
-                                    <!-- ACTION BUTTON -->
-                                    <div>
-                                        <?php if($isFree): ?>
-
-                                        <!-- FREE BOOK -->
-                                        <a href="download.php?id=<?php echo $book['book_id']; ?>"
-                                            class="btn btn-sm mt-4 btn-success rounded-pill px-3">
-                                            <i class="fas fa-download me-1"></i> Download Now
-                                        </a>
-
-                                        <?php else: ?>
-
-                                        <!-- PAID BOOK -->
-                                        <a href="javascript:void(0);" 
-   class="btn btn-sm mt-4 btn-outline-primary rounded-pill px-3 add-to-cart"
-   data-id="<?php echo $book['book_id']; ?>"
-   data-title="<?php echo htmlspecialchars($book['title']); ?>">
-   <i class="fas fa-cart-plus me-1"></i> Add to Cart
-</a>
-
-
-                                        <?php endif; ?>
-                                    </div>
+                                    <span class="book-badge">
+                                        <?php echo htmlspecialchars($book['subcategory_name']); ?>
+                                    </span>
 
                                 </div>
 
-                            </div>
+                                <!-- Book Details -->
+                                <div class="p-3">
+                                    <h6 class="mb-2">
+                                        <a href="book-detail.php?id=<?php echo $book['book_id']; ?>"
+                                            class="text-dark text-decoration-none">
+                                            <?php echo htmlspecialchars($book['title']); ?>
+                                    </h6>
+                                    <p class="small text-muted mb-2">
+                                        <i class="fas fa-user-edit me-1"></i>
+                                        <?php echo htmlspecialchars($book['author']); ?>
+                                    </p>
+                                    <p class="small text-muted mb-3">
+                                        <?php 
+                                            $desc = strip_tags($book['description']);
+                                            echo strlen($desc) > 110 ? substr($desc, 0, 110) . '...' : $desc;
+                                            ?>
+                                    </p>
+
+
+                                    <!-- Price & Actions -->
+                                    <div class="d-flex mt-5 justify-content-between align-items-center">
+
+                                        <?php 
+                                    $isFree = ($book['price'] == 0 || $book['is_free_for_members'] == 1);
+                                     ?>
+
+                                        <!-- PRICE / FREE TAG -->
+                                        <?php if($isFree): ?>
+                                        <span class="free-tag">FREE</span>
+                                        <?php else: ?>
+                                        <span class="book-price ">Rs <?php echo $book['price']; ?></span>
+                                        <?php endif; ?>
+
+                                        <!-- ACTION BUTTON -->
+                                        <div>
+                                            <?php if($isFree): ?>
+
+                                            <!-- FREE BOOK -->
+                                            <a href="download.php?id=<?php echo $book['book_id']; ?>"
+                                                class="btn btn-sm btn-success rounded-pill px-3">
+                                                <i class="fas fa-download me-1"></i> Download Now
+                                            </a>
+
+                                            <?php else: ?>
+
+                                            <!-- PAID BOOK -->
+                                            <a href="javascript:void(0);"
+                                                class="btn btn-sm btn-outline-primary rounded-pill px-3 add-to-cart"
+                                                data-id="<?php echo $book['book_id']; ?>"
+                                                data-title="<?php echo htmlspecialchars($book['title']); ?>">
+                                                <i class="fas fa-cart-plus me-1"></i> Add to Cart
+                                            </a>
+
+
+                                            <?php endif; ?>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </a>
                         </div>
                     </div>
                     <?php endwhile; ?>
@@ -696,7 +700,7 @@ $subcategories_result = mysqli_query($con, "SELECT * FROM subcategories WHERE ca
 <script>
 // View Toggle (Grid/List)
 document.querySelectorAll('.view-btn').forEach(btn => {
-    btn.addEventListener('click', function () {
+    btn.addEventListener('click', function() {
 
         document.querySelectorAll('.view-btn')
             .forEach(b => b.classList.remove('active'));
@@ -724,37 +728,38 @@ document.querySelectorAll('.add-to-cart').forEach(button => {
         this.disabled = true;
 
         fetch('add-to-cart.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            body: `book_id=${bookId}&action=add`
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `book_id=${bookId}&action=add`
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
 
-                
-                // Update cart count in navbar using server response
-                const cartCount = document.querySelector('.position-relative .position-absolute span') 
-                                  || document.querySelector('.position-relative span');
-                if (cartCount) {
-                    cartCount.textContent = data.cart_count;
+
+                    // Update cart count in navbar using server response
+                    const cartCount = document.querySelector(
+                            '.position-relative .position-absolute span') ||
+                        document.querySelector('.position-relative span');
+                    if (cartCount) {
+                        cartCount.textContent = data.cart_count;
+                    }
+
+                    alert(`"${bookTitle}" added to cart successfully!`);
+                } else {
+                    alert(data.message || 'Failed to add to cart');
                 }
-
-                alert(`"${bookTitle}" added to cart successfully!`);
-            } else {
-                alert(data.message || 'Failed to add to cart');
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('An error occurred. Please try again.');
-        })
-        .finally(() => {
-            this.innerHTML = originalHTML;
-            this.disabled = false;
-        });
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            })
+            .finally(() => {
+                this.innerHTML = originalHTML;
+                this.disabled = false;
+            });
     });
 });
 
@@ -790,8 +795,4 @@ document.getElementById('filterForm').addEventListener('submit', function(e) {
         alert('Minimum price cannot be greater than maximum price');
     }
 });
-
-
-
-
 </script>

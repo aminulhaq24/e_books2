@@ -64,7 +64,7 @@ $comp = mysqli_fetch_assoc($cq);
             <form method="POST" action="save_rule.php">
                 <div class="modal-header">
                     <h5 class="modal-title">Add New Rule</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                         <span>&times;</span>
                     </button>
                 </div>
@@ -92,7 +92,7 @@ $comp = mysqli_fetch_assoc($cq);
             <form method="POST" action="update_rule.php">
                 <div class="modal-header">
                     <h5 class="modal-title">Edit Rule</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                         <span>&times;</span>
                     </button>
                         

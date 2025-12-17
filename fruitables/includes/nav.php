@@ -1,6 +1,11 @@
 <?php
-include('connection.php');
-session_start();
+require_once 'init.php'; // Session bhi start ho jayega
+
+// Get user data if logged in
+$user = null;
+if (isLoggedIn()) {
+    $user = getUserData($con);
+}
 
 // Page meta data
 $page_title = "ReadSphere - Online eBook Library & Book Store";
@@ -384,59 +389,43 @@ $page_keywords = "eBooks, Online Library, Digital Books, Reading Platform, Books
                         </button>
                         
 
-                        <!-- <a href="<?php echo isset($_SESSION['user_id']) ? 'profile.php' : 'login.php'; ?>"
-                            class="my-auto">
-                            <i class="fas fa-user fa-2x text-primary"></i>
-                        </a> -->
+                   
 
                         <!-- profile -->
 
-                        <?php if (isset($_SESSION['user_id'])): ?>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fas fa-user-circle me-1"></i>
-                                <?php echo htmlspecialchars($_SESSION['user_name'] ?? 'Account'); ?>
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="userDropdown">
-                                <li><a class="dropdown-item" href="account.php">
-                                        <i class="fas fa-tachometer-alt me-2"></i> Dashboard
-                                    </a></li>
-                                <li><a class="dropdown-item" href="my-orders.php">
-                                        <i class="fas fa-shopping-bag me-2"></i> My Orders
-                                    </a></li>
-                                <li><a class="dropdown-item" href="my-library.php">
-                                        <i class="fas fa-book me-2"></i> My Library
-                                    </a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="edit-profile.php">
-                                        <i class="fas fa-user-edit me-2"></i> Edit Profile
-                                    </a></li>
-                                <li><a class="dropdown-item" href="change-password.php">
-                                        <i class="fas fa-key me-2"></i> Change Password
-                                    </a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item text-danger" href="logout.php">
-                                        <i class="fas fa-sign-out-alt me-2"></i> Logout
-                                    </a></li>
-                            </ul>
-                        </li>
-                        <?php else: ?>
-                        <li class="nav-item">
-                            <a class="nav-link" href="login.php">
-                                <i class="fas fa-sign-in-alt me-1"></i> Login
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="register.php">
-                                <i class="fas fa-user-plus me-1"></i> Register
-                            </a>
-                        </li>
-                        <?php endif; ?>
+                          <?php if (isLoggedIn() && $user): ?>
+                <div class="dropdown">
+                    <button class="btn btn-outline-primary dropdown-toggle" type="button" 
+                            id="userDropdown" data-bs-toggle="dropdown">
+                        <i class="fas fa-user me-1"></i>
+                        <?php echo htmlspecialchars($user['name']); ?>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="account.php">
+                            <i class="fas fa-user-circle me-2"></i> My Account
+                        </a></li>
+                        <li><a class="dropdown-item" href="my-orders.php">
+                            <i class="fas fa-shopping-bag me-2"></i> My Orders
+                        </a></li>
+                        <li><a class="dropdown-item" href="my-library.php">
+                            <i class="fas fa-book me-2"></i> My Library
+                        </a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="logout.php">
+                            <i class="fas fa-sign-out-alt me-2"></i> Logout
+                        </a></li>
+                    </ul>
+                </div>
+            <?php else: ?>
+                <div>
+                    <a href="login.php" class="btn btn-outline-primary me-2">
+                        <i class="fas fa-sign-in-alt me-1"></i> Login
+                    </a>
+                    <a href="register.php" class="btn btn-primary">
+                        <i class="fas fa-user-plus me-1"></i> Register
+                    </a>
+                </div>
+            <?php endif; ?>
 
 
                         <!-- frofile end -->

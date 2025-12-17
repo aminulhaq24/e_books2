@@ -122,7 +122,7 @@ $payment = mysqli_fetch_assoc($payment_result);
         <?php if(isset($_GET['success'])): ?>
         <div class="alert alert-success alert-dismissible fade show">
             <i class="fas fa-check-circle"></i> <?php echo $_GET['success']; ?>
-            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <button type="button" class="close" data-bs-dismiss="alert">&times;</button>
         </div>
         <?php endif; ?>
         

@@ -119,11 +119,11 @@ $cat_res = mysqli_query($con, $cat_sql);
         <h3 class="text-primary mb-0"><i class="fa fa-folder"></i> Categories</h3>
 
         <div>
-            <button class="btn btn-primary shadow-sm" data-toggle="modal" data-target="#addCategoryModal">
+            <button class="btn btn-primary shadow-sm" data-bs-toggle="modal" data-bs-target="#addCategoryModal">
                 + Add Category
             </button>
 
-            <button class="btn btn-success shadow-sm" data-toggle="modal" data-target="#addSubcategoryModal">
+            <button class="btn btn-success shadow-sm" data-bs-toggle="modal" data-bs-target="#addSubcategoryModal">
                 + Add Subcategory
             </button>
         </div>
@@ -146,7 +146,7 @@ $cat_res = mysqli_query($con, $cat_sql);
                 <?php while ($cat = mysqli_fetch_assoc($cat_res)) { ?>
 
                 <!-- CATEGORY ROW -->
-                <tr class="category-row" data-toggle="collapse" data-target="#cat<?php echo $cat['id']; ?>">
+                <tr class="category-row" data-bs-toggle="collapse" data-bs-target="#cat<?php echo $cat['id']; ?>">
                     <td><?php echo $cat['id']?></td>
                     <td class="category-title">
                         📂 <?php echo $cat['category_name']; echo ' <img src="img/down.png" height="12px" alt="">' ?>
@@ -154,8 +154,8 @@ $cat_res = mysqli_query($con, $cat_sql);
 
                     <td>
                         <button type="button" class="btn btn-sm btn-primary editBtn" data-id="<?php echo $cat['id']; ?>"
-                            data-name="<?php echo $cat['category_name']; ?>" data-toggle="modal"
-                            data-target="#editCategoryModal">✏️ Edit</button>
+                            data-name="<?php echo $cat['category_name']; ?>" data-bs-toggle="modal"
+                            data-bs-target="#editCategoryModal">✏️ Edit</button>
 
                         <a href="delete_category.php?id=<?php echo $cat['id']; ?>" class="btn btn-sm btn-danger"><i
                                 class="fa fa-trash"></i>&nbsp; Delete</a>
@@ -205,8 +205,8 @@ $cat_res = mysqli_query($con, $cat_sql);
                                         <button class="btn btn-sm btn-primary editSubBtn"
                                             data-id="<?php echo $sub['id']; ?>"
                                             data-name="<?php echo $sub['subcategory_name']; ?>"
-                                            data-cat="<?php echo $sub['category_id']; ?>" data-toggle="modal"
-                                            data-target="#editSubcategoryModal">
+                                            data-cat="<?php echo $sub['category_id']; ?>" data-bs-toggle="modal"
+                                            data-bs-target="#editSubcategoryModal">
                                             ✏️ Edit
                                         </button>
 
@@ -247,7 +247,7 @@ $cat_res = mysqli_query($con, $cat_sql);
 
                 <div class="modal-header">
                     <h5 class="modal-title" id="addCategoryModalLabel">Add New Category</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -259,7 +259,7 @@ $cat_res = mysqli_query($con, $cat_sql);
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary">Add Category</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                 </div>
             </div>
         </form>
@@ -276,7 +276,7 @@ $cat_res = mysqli_query($con, $cat_sql);
 
             <div class="modal-header bg-warning">
                 <h5 class="modal-title">Edit Category</h5>
-                <button type="button" class="close" data-dismiss="modal">
+                <button type="button" class="close" data-bs-dismiss="modal">
                     <span>&times;</span>
                 </button>
             </div>
@@ -292,7 +292,7 @@ $cat_res = mysqli_query($con, $cat_sql);
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-warning">Update</button>
                 </div>
             </form>
@@ -314,7 +314,7 @@ $cat_res = mysqli_query($con, $cat_sql);
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="addSubcategoryModalLabel">Add New Subcategory</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -339,7 +339,7 @@ $cat_res = mysqli_query($con, $cat_sql);
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-success">Add Subcategory</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                 </div>
             </div>
         </form>
@@ -357,7 +357,7 @@ $cat_res = mysqli_query($con, $cat_sql);
 
                 <div class="modal-header">
                     <h5 class="modal-title">Edit Subcategory</h5>
-                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <button type="button" class="close" data-bs-dismiss="modal">×</button>
                 </div>
 
                 <div class="modal-body">
