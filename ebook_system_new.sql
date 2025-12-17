@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 15, 2025 at 06:30 AM
+-- Generation Time: Dec 17, 2025 at 05:14 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -54,9 +54,13 @@ CREATE TABLE `books` (
 --
 
 INSERT INTO `books` (`book_id`, `title`, `author`, `category_id`, `subcategory_id`, `description`, `cover_image`, `pdf_file`, `soft_copy_file`, `cd_available`, `price`, `created_at`, `format_type`, `subscription_duration`, `cd_price`, `weight`, `delivery_charges`, `is_free_for_members`, `is_competition_winner`) VALUES
-(1, 'Islamic Moral Values', 'Amin ul haq', 22, 8, 'lorem ipsum was good enough cold war', '1764562520_pic 1 customer (4).jpg', '1764562520_pq2.docx', '', 'No', 0, '2025-12-01 04:15:20', 'HARDCOPY', 0, 0.00, 0.00, 0.00, 0, 0),
 (4, 'Bang e dara', 'Allama Iqbal', 22, 18, 'This is one of the most popular poetry book in South Asia and the entire world as well.', '1765009231_metal wall13.webp', '1765009231_pq2.docx', '', 'Yes', 600, '2025-12-06 08:20:31', 'HARDCOPY', 0, 0.00, 0.00, 0.00, 0, 0),
-(8, 'Sixth sense jjhb', 'wajahat khan', 22, 8, 'asd loi mlkl kjkdf kjnlkdsf kjnds', '1765478255_metal wall11.webp', '1765478255_Repeat assignment - Copy.pdf', '', 'Yes', 0, '2025-12-11 18:37:35', 'HARDCOPY', 0, 0.00, 0.00, 0.00, 1, 0);
+(9, 'Our Fae Queen ', 'Traci Lovelot', 22, 21, 'When my magic suddenly  awakens and uninvited guests crash my birthday party, Fae warriors save me... and kidnap me. These irresistible Fae plan to whisk me away to their enchanted realm, a world that\'s fading without its queen — me. \"I almost got fired for reading this book... worth it!\" Meet all 5 of her fae consorts in this FREE reverse harem box set.', '1765822094_book1.jpg', '1765822094_book1.pdf', '', 'Yes', 1500, '2025-12-15 18:08:14', 'PDF', 0, 0.00, 0.40, 200.00, 1, 0),
+(11, 'A Spy Inside the Castle', 'M.B. Courtenay', 22, 21, 'Intelligent, and haunt prescient, A Spy Inside the Castle explores the intersection of techno and truth in an age where perception is weaponized—and no one is beyond suspicion.\r\n', '1765823018_book2.jpg', '1765823018_book2_compressed.pdf', '', 'Yes', 2000, '2025-12-15 18:23:38', 'PDF', 1, 0.00, 0.60, 250.00, 1, 0),
+(12, 'Trouble in Mudbug', 'Jana DeLeon', 22, 21, 'Scientist Maryse Robicheaux thought a lot of her problems had gone away with her mother-in-law’s death. The woman was rude, pushy and used her considerable wealth to run herd over the entire town of Mudbug, Louisiana. Unfortunately, death doesn’t slow down Helena one bit, and Agent Luc LeJeune’s arrival in town is yet another complication for Maryse.\r\n', '1765823395_boo3.jpg', '1765823395_book3_compressed.pdf', '', 'Yes', 0, '2025-12-15 18:29:55', 'PDF', 1, 200.00, 0.00, 200.00, 0, 0),
+(13, 'The First Ride: The Real Story of Santa Claus', 'Gary Paul Bryant', 22, 21, 'Forget Kris Kringle,  Sinterklaas, and St. Nick—you’re  about to learn the real story. In the 1870s, on a quiet farm in rural Hopeville, Connecticut, the Clauses arrived to work for Max Pepin. Christmas has never been the  same since. Walk the trails, and wander the same woods where Santa Claus once lived.” Step into the past, join the adventure, and discover the true beginnings of Santa Claus.', '1765823779_book4.jpg', '1765823779_book2_compressed.pdf', '', 'No', 0, '2025-12-15 18:36:19', 'PDF', 3, 0.00, 0.00, 0.00, 1, 0),
+(14, 'The in treasure Conspiracy', 'Bruce Hutchison', 22, 21, 'Did Heinrich Schliemann actually discover Helen of Troy’s famous golden necklace and the ancient Trojan treasure near the Dardanelles in Turkey in 1872? And, if he did, what did he do with it? Where is it now? When a friend of Clayton Lovell Stone is brutally murdered following the Trojan treasures’ trail, others after that treasure set a trap to stop Stone dead in his tracks.\r\n', '1765824356_book5.jpg', '1765824356_book3_compressed.pdf', '', 'No', 0, '2025-12-15 18:45:56', 'PDF', 1, 0.00, 0.00, 0.00, 1, 1),
+(15, 'Not Forgiven', 'Shawn Raiford', 22, 21, 'Chloe, one of North America’s deadliest contract killers, can’t stop the massacre that erupts at a Houston café. Innocent people die—and now she wants blood for blood. As Inspectors Creed and Mason hunt what looks like a serial killer, Chloe tears through corrupt cops, gangs, and the hit squad that targeted her. Not Forgiven is a ruthless thriller of vengeance and chaos.\r\n', '1765824616_book6.jpg', '1765824616_book1.pdf', '', 'Yes', 890, '2025-12-15 18:50:16', 'PDF', 0, 250.00, 0.50, 240.00, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -77,7 +81,8 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`id`, `user_id`, `book_id`, `quantity`, `added_at`) VALUES
-(1, 4, 4, 2, '2025-12-14 12:44:27');
+(1, 4, 4, 10, '2025-12-14 12:44:27'),
+(2, 4, 15, 8, '2025-12-16 08:17:50');
 
 -- --------------------------------------------------------
 
@@ -342,7 +347,7 @@ INSERT INTO `users` (`id`, `name`, `email`, `phone`, `password`, `role`, `status
 (1, 'Amin ul haq', 'amin@gmail.com', NULL, '$2y$10$.JhboR52TZYViJdhrgAMFOtz7Ae3sROyJS3bnxXg.8P0teZVtMH0C', 'admin', 'active', 'metroville site karachi', NULL, NULL, NULL, NULL, '2025-11-29 08:08:04', '2025-12-13 19:00:02'),
 (2, 'Affan Khan', 'affan@gmail.com', NULL, '$2y$10$19WIesJAt.ic8.Cpolvq/upobCX3RsOYw9iAvTdFl3AQ8dGkeoGGi', 'dealer', 'active', 'metroville site karachi', NULL, NULL, NULL, NULL, '2025-11-29 10:05:02', '2025-12-13 19:00:02'),
 (3, 'Amin ul haq 45', 'amin45@gmail.com', '03216790876', '$2y$10$AuzIVAnXgE6itNy2fktBS.wVRoWYMrX40sHZk4VoYZojOHHFY.Aze', 'user', 'active', NULL, NULL, NULL, NULL, NULL, '2025-12-13 19:09:40', '2025-12-13 19:09:40'),
-(4, 'Amin 678', 'amin47@gmail.com', '03216790098', '$2y$10$ccsdHh0oWmWry82s330QXukPjN9g/F13AXewwJj.n/tn1Zz7.rZvO', 'user', 'active', 'fzf bhb kjnk', NULL, NULL, NULL, NULL, '2025-12-13 19:24:39', '2025-12-13 19:24:39');
+(4, 'Amin ullah', 'amin47@gmail.com', '03216790098', '$2y$10$6Rn8QCFZbbdmbVh7y2z4g.ISMAQaTVmUkttghYII1CbkbwK3y.3Pa', 'user', 'active', 'fzf bhb kjnk', NULL, NULL, NULL, NULL, '2025-12-13 19:24:39', '2025-12-16 17:30:14');
 
 -- --------------------------------------------------------
 
@@ -470,13 +475,13 @@ ALTER TABLE `winners`
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `book_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `book_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `categories`
